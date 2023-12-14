@@ -1,20 +1,43 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/components/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
-    },
+    extend: {},
   },
-  plugins: [],
-}
-export default config
+
+  daisyui: {
+    themes: [
+      "emerald",
+      "dim",
+      {
+        customdark: {
+          primary: "#1d4ed8",
+          secondary: "#c084fc",
+          accent: "#fda4af",
+          neutral: "#2a2b30",
+          "base-100": "#282030",
+          info: "#00c1db",
+          success: "#00ea73",
+          warning: "#fbbf24",
+          error: "#da3554",
+        },
+      },
+    ],
+    darkTheme: "dim",
+    base: true,
+    styled: true,
+    utils: true,
+    prefix: "",
+    logs: "true",
+    themeRoot: ":root",
+  },
+
+  plugins: [require("@tailwindcss/typography"), require("daisyui")],
+};
+export default config;
