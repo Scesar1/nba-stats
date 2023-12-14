@@ -1,26 +1,15 @@
-"use client";
-
-import { HiOutlineMoon, HiOutlineSun } from "react-icons/hi";
-import { useState, useEffect } from "react";
 import React from "react";
 
 function ThemeChange() {
-  const [theme, setTheme] = useState("emerald");
-  const toggleTheme = () => {
-    setTheme(theme === "dim" ? "emerald" : "dim");
-  };
-  useEffect(() => {
-    document.querySelector("html")?.setAttribute("data-theme", theme);
-  }, [theme]);
   return (
     <div>
-      <label className="swap swap-rotate">
+      <label className="swap swap-rotate mt-[0.45rem]">
         {/* this hidden checkbox controls the state */}
-        <input type="checkbox" className="theme-controller" value="dim" />
+        <input type="checkbox" className="theme-controller" value="business" />
 
         {/* sun icon */}
         <svg
-          className="swap-on fill-current w-8 h-8 text-white"
+          className="swap-on fill-current w-7 h-7 text-white"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
         >
@@ -29,7 +18,7 @@ function ThemeChange() {
 
         {/* moon icon */}
         <svg
-          className="swap-off fill-current w-8 h-8 text-white"
+          className="swap-off fill-current w-7 h-7 text-white"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
         >

@@ -13,8 +13,8 @@ const config: Config = {
 
   daisyui: {
     themes: [
-      "emerald",
-      "dim",
+      "fantasy",
+      "business",
       {
         customdark: {
           primary: "#1d4ed8",
@@ -29,7 +29,7 @@ const config: Config = {
         },
       },
     ],
-    darkTheme: "dim",
+    darkTheme: "business",
     base: true,
     styled: true,
     utils: true,
