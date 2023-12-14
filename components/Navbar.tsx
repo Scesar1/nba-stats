@@ -11,7 +11,7 @@ function Navbar() {
   const nonActiveStyle = linkStyle + " text-info";
   const currentRoute = usePathname();
   return (
-    <nav className="navbar bg-base-100 border-b-[1px] border-black-400 p-0 min-h-[3rem]">
+    <nav className="navbar bg-base-100 border-b-[1px] border-stone-500 p-0 min-h-[3rem]">
       <section className="container container-navbar">
         <ul className="flex w-[100%] overflow-x-scroll">
           <li className="grow relative text-center px-[1rem]">
