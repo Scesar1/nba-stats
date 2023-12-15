@@ -7,8 +7,8 @@ function Navbar() {
   const linkStyle =
     "text-xl hover:border-b-2 hover:border-accent leading-[2.75rem]";
 
-  const activeStyle = linkStyle + " text-dark";
-  const nonActiveStyle = linkStyle + " text-info";
+  const activeStyle = linkStyle + " text-warning";
+  const nonActiveStyle = linkStyle + " text-dark";
   const currentRoute = usePathname();
   return (
     <nav className="navbar bg-base-100 border-b-[1px] border-stone-500 p-0 min-h-[3rem]">

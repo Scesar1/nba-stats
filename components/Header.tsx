@@ -4,7 +4,7 @@ import Link from "next/link";
 
 function Header() {
   return (
-    <nav className="navbar bg-success">
+    <nav className="navbar bg-[#fb7185]">
       <section className="container container-navbar">
         <Link href="/" className="mt-6 ml-10 text-2xl text-white">
           NBA STATS

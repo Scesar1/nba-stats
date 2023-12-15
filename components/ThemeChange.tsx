@@ -5,7 +5,7 @@ function ThemeChange() {
     <div>
       <label className="swap swap-rotate mt-[0.45rem]">
         {/* this hidden checkbox controls the state */}
-        <input type="checkbox" className="theme-controller" value="business" />
+        <input type="checkbox" className="theme-controller" value="synthwave" />
 
         {/* sun icon */}
         <svg

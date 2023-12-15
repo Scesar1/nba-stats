@@ -14,7 +14,7 @@ const config: Config = {
   daisyui: {
     themes: [
       "fantasy",
-      "business",
+      "synthwave",
       {
         customdark: {
           primary: "#1d4ed8",
