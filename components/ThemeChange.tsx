@@ -1,11 +1,24 @@
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 
 function ThemeChange() {
+  const [isLight, setIsLight] = useState(
+    JSON.parse(localStorage.getItem("isLight")!)
+  );
+  useEffect(() => {
+    localStorage.setItem("isLight", JSON.stringify(isLight));
+  }, [isLight]);
   return (
     <div>
       <label className="swap swap-rotate mt-[0.45rem]">
         {/* this hidden checkbox controls the state */}
-        <input type="checkbox" className="theme-controller" value="fantasy" />
+        <input
+          type="checkbox"
+          checked={isLight}
+          className="theme-controller"
+          value="fantasy"
+          onChange={() => setIsLight(!isLight)}
+        />
         {/* sun icon */}
         <svg
           className="swap-on fill-current w-8 h-8 text-white"
