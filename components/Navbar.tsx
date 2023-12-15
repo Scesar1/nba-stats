@@ -35,9 +35,9 @@ function Navbar() {
           <li className="grow relative text-center px-[1rem]">
             <Link
               className={
-                currentRoute === "/teams" ? activeStyle : nonActiveStyle
+                currentRoute === "/teams/overview" ? activeStyle : nonActiveStyle
               }
-              href="/teams"
+              href="/teams/overview"
             >
               TEAMS
             </Link>

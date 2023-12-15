@@ -4,6 +4,7 @@ import "./globals.css";
 
 import Navbar from "../components/Navbar";
 import Header from "../components/Header";
+import Footer from "@/components/Footer";
 
 const lato = Lato({
   subsets: ["latin"],
@@ -26,7 +27,8 @@ export default function RootLayout({
       <body className={lato.className}>
         <Header />
         <Navbar />
-        <div className="container container-main">{children}</div>
+        <div className="container container-main h-screen bg-base-100">{children}</div>
+        <Footer />
       </body>
     </html>
   );
