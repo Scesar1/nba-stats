@@ -2,21 +2,20 @@
 import React, { useState, useEffect } from "react";
 
 function ThemeChange() {
-
-  let item = "";
-
-  if (typeof window !== "undefined") {
-    item = localStorage.getItem("isLight")!;
-  }
+  const isLocalStorageAvailable =
+    typeof window !== "undefined" && window.localStorage;
 
   const [isLight, setIsLight] = useState(
-    item
+    isLocalStorageAvailable
+      ? JSON.parse(localStorage.getItem("isLight")!)
+      : false
   );
 
-
   useEffect(() => {
-    localStorage.setItem("isLight", JSON.stringify(isLight));
-  }, [isLight]);
+    if (isLocalStorageAvailable) {
+      localStorage.setItem("isLight", JSON.stringify(isLight));
+    }
+  }, [isLight, isLocalStorageAvailable]);
   return (
     <div>
       <label className="swap swap-rotate mt-[0.45rem]">
