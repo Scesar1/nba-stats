@@ -2,9 +2,18 @@
 import React, { useState, useEffect } from "react";
 
 function ThemeChange() {
+
+  let item = "";
+
+  if (typeof window !== "undefined") {
+    item = localStorage.getItem("isLight")!;
+  }
+
   const [isLight, setIsLight] = useState(
-    JSON.parse(localStorage.getItem("isLight")!)
+    item
   );
+
+
   useEffect(() => {
     localStorage.setItem("isLight", JSON.stringify(isLight));
   }, [isLight]);

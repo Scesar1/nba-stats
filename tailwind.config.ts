@@ -37,6 +37,7 @@ const config: Config = {
     logs: "true",
     themeRoot: ":root",
   },
+  darkMode: ["class", '[data-theme="synthwave"]'],
 
   plugins: [require("@tailwindcss/typography"), require("daisyui")],
 };
