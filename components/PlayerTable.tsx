@@ -54,11 +54,8 @@ const PlayerTable = (props: propTypes) => {
       columnHelper.accessor("colleges", {
         header: "Colleges",
       }),
-      /* columnHelper.accessor("player_id", {
-        header: "id (hidden)",
-      }), */
     ];
-  }, []);
+  }, [columnHelper]);
 
   const { playerData } = props;
   const [sorting, setSorting] = useState<SortingState>([]);
