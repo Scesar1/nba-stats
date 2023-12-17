@@ -22,7 +22,6 @@ type propTypes = {
 
 const PlayerTable = (props: propTypes) => {
   const columnHelper = createColumnHelper<Player>();
-
   const userColumnDefs = useMemo<ColumnDef<Player, any>[]>(() => {
     return [
       columnHelper.accessor("name", {
@@ -41,10 +40,10 @@ const PlayerTable = (props: propTypes) => {
         header: "Position",
       }),
       columnHelper.accessor("ht", {
-        header: "Height",
+        header: "Height (in.)",
       }),
       columnHelper.accessor("wt", {
-        header: "Weight",
+        header: "Weight (lbs)",
       }),
       columnHelper.accessor("birth_date", {
         header: "Birth Date",
@@ -55,6 +54,9 @@ const PlayerTable = (props: propTypes) => {
       columnHelper.accessor("colleges", {
         header: "Colleges",
       }),
+      /* columnHelper.accessor("player_id", {
+        header: "id (hidden)",
+      }), */
     ];
   }, []);
 
@@ -118,7 +120,7 @@ const PlayerTable = (props: propTypes) => {
           ))}
         </tbody>
       </table>
-      <Pagination table={table} />
+        <Pagination table={table} />
     </div>
   );
 };

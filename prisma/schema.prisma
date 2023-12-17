@@ -10,7 +10,7 @@ datasource db {
 
 model player {
   player_id  Int       @id @default(autoincrement())
-  name       String?   @db.VarChar(100)
+  name       String    @db.VarChar(100)
   from       Int?
   to         Int?
   pos        String?

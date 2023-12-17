@@ -1,5 +1,5 @@
 export type Player = {
-  id: number;
+  player_id: number;
   name: string;
   from: number;
   to: number;
