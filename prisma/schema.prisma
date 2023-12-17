@@ -1,0 +1,21 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model player {
+  player_id  Int       @id @default(autoincrement())
+  name       String?   @db.VarChar(100)
+  from       Int?
+  to         Int?
+  pos        String?
+  ht         Int?
+  wt         Decimal?  @db.Decimal(4, 1)
+  birth_date DateTime? @db.Date
+  colleges   String?   @db.VarChar(200)
+}

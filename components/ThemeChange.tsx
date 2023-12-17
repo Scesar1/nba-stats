@@ -1,32 +1,11 @@
-"use client";
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 function ThemeChange() {
-  const isLocalStorageAvailable =
-    typeof window !== "undefined" && window.localStorage;
-
-  const [isLight, setIsLight] = useState(
-    isLocalStorageAvailable
-      ? JSON.parse(localStorage.getItem("isLight")!)
-      : false
-  );
-
-  useEffect(() => {
-    if (isLocalStorageAvailable) {
-      localStorage.setItem("isLight", JSON.stringify(isLight));
-    }
-  }, [isLight, isLocalStorageAvailable]);
   return (
     <div>
       <label className="swap swap-rotate mt-[0.45rem]">
         {/* this hidden checkbox controls the state */}
-        <input
-          type="checkbox"
-          checked={isLight}
-          className="theme-controller"
-          value="fantasy"
-          onChange={() => setIsLight(!isLight)}
-        />
+        <input type="checkbox" className="theme-controller" value="fantasy" />
         {/* sun icon */}
         <svg
           className="swap-on fill-current w-8 h-8 text-white"

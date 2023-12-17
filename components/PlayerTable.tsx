@@ -6,22 +6,64 @@ import {
   SortingState,
   getSortedRowModel,
   getPaginationRowModel,
+  createColumnHelper,
+  ColumnDef,
 } from "@tanstack/react-table";
-import React, { useState } from "react";
-import { userColumnDefs } from "./UserColumnDefs";
+import React, { useMemo, useState } from "react";
+//import { userColumnDefs } from "./UserColumnDefs";
 import { Player } from "@/app/types/Player";
 import Pagination from "./Pagination";
+import CellLink from "./CellLink";
+import moment from "moment";
 
 type propTypes = {
   playerData: Record<string, any>[];
 };
 
 const PlayerTable = (props: propTypes) => {
+  const columnHelper = createColumnHelper<Player>();
+
+  const userColumnDefs = useMemo<ColumnDef<Player, any>[]>(() => {
+    return [
+      columnHelper.accessor("name", {
+        header: "Name",
+        cell: (props) => (
+          <CellLink getValue={props.getValue()} row={props.row} />
+        ),
+      }),
+      columnHelper.accessor("from", {
+        header: "From",
+      }),
+      columnHelper.accessor("to", {
+        header: "To",
+      }),
+      columnHelper.accessor("pos", {
+        header: "Position",
+      }),
+      columnHelper.accessor("ht", {
+        header: "Height",
+      }),
+      columnHelper.accessor("wt", {
+        header: "Weight",
+      }),
+      columnHelper.accessor("birth_date", {
+        header: "Birth Date",
+        cell: (props) => (
+          <span>{moment(props.getValue()).format("MM/DD/yyyy")}</span>
+        ),
+      }),
+      columnHelper.accessor("colleges", {
+        header: "Colleges",
+      }),
+    ];
+  }, []);
+
   const { playerData } = props;
   const [sorting, setSorting] = useState<SortingState>([]);
+  const [data, setData] = useState(() => [...(playerData as Player[])]);
   const table = useReactTable({
     columns: userColumnDefs,
-    data: (playerData as Player[]) ?? [],
+    data,
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
@@ -69,9 +111,7 @@ const PlayerTable = (props: propTypes) => {
             <tr key={row.id}>
               {row.getVisibleCells().map((cell) => (
                 <td key={cell.id}>
-                  {cell.getValue() instanceof Date
-                    ? (cell.getValue() as Date).toLocaleDateString()
-                    : (cell.getValue() as React.ReactNode)}
+                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
                 </td>
               ))}
             </tr>

@@ -25,9 +25,11 @@ function Navbar() {
           <li className="grow relative text-center px-[1rem]">
             <Link
               className={
-                currentRoute === "/players" ? activeStyle : nonActiveStyle
+                currentRoute === "/players/overview"
+                  ? activeStyle
+                  : nonActiveStyle
               }
-              href="/players"
+              href="/players/overview"
             >
               PLAYERS
             </Link>
@@ -35,7 +37,9 @@ function Navbar() {
           <li className="grow relative text-center px-[1rem]">
             <Link
               className={
-                currentRoute === "/teams/overview" ? activeStyle : nonActiveStyle
+                currentRoute === "/teams/overview"
+                  ? activeStyle
+                  : nonActiveStyle
               }
               href="/teams/overview"
             >
