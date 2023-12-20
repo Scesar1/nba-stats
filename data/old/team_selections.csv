@@ -1,0 +1,291 @@
+Season,Lg,Tm,Players,Type,Player 1,Player 2,Player 3,Player 4,Player 5,Player 6
+2022-23,NBA,1st,"Joel Embiid C, Giannis Antetokounmpo F, Jayson Tatum F, Luka Dončić G, Shai Gilgeous-Alexander G",All League,203954,203507,1628369,1629029,1628983,-99
+2022-23,NBA,2nd,"Nikola Jokić C, Jimmy Butler F, Jaylen Brown F, Donovan Mitchell G, Stephen Curry G",All League,203999,202710,1627759,1628378,201939,-99
+2022-23,NBA,3rd,"Domantas Sabonis C, LeBron James F, Julius Randle F, De'Aaron Fox G, Damian Lillard G",All League,1627734,2544,203944,1628368,203081,-99
+2021-22,NBA,1st,"Nikola Jokić C, Giannis Antetokounmpo F, Jayson Tatum F, Luka Dončić G, Devin Booker G",All League,203999,203507,1628369,1629029,1626164,-99
+2021-22,NBA,2nd,"Joel Embiid C, Kevin Durant F, DeMar DeRozan F, Ja Morant G, Stephen Curry G",All League,203954,201142,201942,1629630,201939,-99
+2021-22,NBA,3rd,"Karl-Anthony Towns C, LeBron James F, Pascal Siakam F, Chris Paul G, Trae Young G",All League,1626157,2544,1627783,101108,1629027,-99
+2020-21,NBA,1st,"Nikola Jokić C, Giannis Antetokounmpo F, Kawhi Leonard F, Stephen Curry G, Luka Dončić G",All League,203999,203507,202695,201939,1629029,-99
+2020-21,NBA,2nd,"Joel Embiid C, Julius Randle F, LeBron James F, Chris Paul G, Damian Lillard G",All League,203954,203944,2544,101108,203081,-99
+2020-21,NBA,3rd,"Rudy Gobert C, Jimmy Butler F, Paul George F, Bradley Beal G, Kyrie Irving G",All League,203497,202710,202331,203078,202681,-99
+2019-20,NBA,1st,"Anthony Davis C, Giannis Antetokounmpo F, LeBron James F, James Harden G, Luka Dončić G",All League,203076,203507,2544,201935,1629029,-99
+2019-20,NBA,2nd,"Nikola Jokić C, Kawhi Leonard F, Pascal Siakam F, Damian Lillard G, Chris Paul G",All League,203999,202695,1627783,203081,101108,-99
+2019-20,NBA,3rd,"Rudy Gobert C, Jayson Tatum F, Jimmy Butler F, Ben Simmons G, Russell Westbrook G",All League,203497,1628369,202710,1627732,201566,-99
+2018-19,NBA,1st,"Nikola Jokić C, Giannis Antetokounmpo F, Paul George F, James Harden G, Stephen Curry G",All League,203999,203507,202331,201935,201939,-99
+2018-19,NBA,2nd,"Joel Embiid C, Kevin Durant F, Kawhi Leonard F, Damian Lillard G, Kyrie Irving G",All League,203954,201142,202695,203081,202681,-99
+2018-19,NBA,3rd,"Rudy Gobert C, LeBron James F, Blake Griffin F, Kemba Walker G, Russell Westbrook G",All League,203497,2544,201933,202689,201566,-99
+2017-18,NBA,1st,"Anthony Davis C, LeBron James F, Kevin Durant F, Damian Lillard G, James Harden G",All League,203076,2544,201142,203081,201935,-99
+2017-18,NBA,2nd,"Joel Embiid C, Giannis Antetokounmpo F, LaMarcus Aldridge F, Russell Westbrook G, DeMar DeRozan G",All League,203954,203507,200746,201566,201942,-99
+2017-18,NBA,3rd,"Karl-Anthony Towns C, Jimmy Butler F, Paul George F, Stephen Curry G, Victor Oladipo G",All League,1626157,202710,202331,201939,203506,-99
+2016-17,NBA,1st,"Anthony Davis C, LeBron James F, Kawhi Leonard F, James Harden G, Russell Westbrook G",All League,203076,2544,202695,201935,201566,-99
+2016-17,NBA,2nd,"Rudy Gobert C, Giannis Antetokounmpo F, Kevin Durant F, Stephen Curry G, Isaiah Thomas G",All League,203497,203507,201142,201939,202738,-99
+2016-17,NBA,3rd,"DeAndre Jordan C, Draymond Green F, Jimmy Butler F, John Wall G, DeMar DeRozan G",All League,201599,203110,202710,202322,201942,-99
+2015-16,NBA,1st,"DeAndre Jordan C, LeBron James F, Kawhi Leonard F, Stephen Curry G, Russell Westbrook G",All League,201599,2544,202695,201939,201566,-99
+2015-16,NBA,2nd,"DeMarcus Cousins C, Kevin Durant F, Draymond Green F, Chris Paul G, Damian Lillard G",All League,202326,201142,203110,101108,203081,-99
+2015-16,NBA,3rd,"Andre Drummond C, Paul George F, LaMarcus Aldridge F, Klay Thompson G, Kyle Lowry G",All League,203083,202331,200746,202691,200768,-99
+2014-15,NBA,1st,"Marc Gasol C, LeBron James F, Anthony Davis F, Stephen Curry G, James Harden G",All League,201188,2544,203076,201939,201935,-99
+2014-15,NBA,2nd,"DeMarcus Cousins C, Pau Gasol C, LaMarcus Aldridge F, Russell Westbrook G, Chris Paul G",All League,202326,2200,200746,201566,101108,-99
+2014-15,NBA,3rd,"DeAndre Jordan C, Blake Griffin F, Tim Duncan F, Klay Thompson G, Kyrie Irving G",All League,201599,201933,1495,202691,202681,-99
+2013-14,NBA,1st,"Joakim Noah C, Kevin Durant F, LeBron James F, James Harden G, Chris Paul G",All League,201149,201142,2544,201935,101108,-99
+2013-14,NBA,2nd,"Dwight Howard C, Blake Griffin F, Kevin Love F, Stephen Curry G, Tony Parker G",All League,2730,201933,201567,201939,2225,-99
+2013-14,NBA,3rd,"Al Jefferson C, Paul George F, LaMarcus Aldridge F, Goran Dragić G, Damian Lillard G",All League,2744,202331,200746,201609,203081,-99
+2012-13,NBA,1st,"Tim Duncan C, Kevin Durant F, LeBron James F, Kobe Bryant G, Chris Paul G",All League,1495,201142,2544,977,101108,-99
+2012-13,NBA,2nd,"Marc Gasol C, Carmelo Anthony F, Blake Griffin F, Tony Parker G, Russell Westbrook G",All League,201188,2546,201933,2225,201566,-99
+2012-13,NBA,3rd,"Dwight Howard C, Paul George F, David Lee F, James Harden G, Dwyane Wade G",All League,2730,202331,101135,201935,2548,-99
+2011-12,NBA,1st,"Dwight Howard C, Kevin Durant F, LeBron James F, Kobe Bryant G, Chris Paul G",All League,2730,201142,2544,977,101108,-99
+2011-12,NBA,2nd,"Andrew Bynum C, Blake Griffin F, Kevin Love F, Tony Parker G, Russell Westbrook G",All League,101115,201933,201567,2225,201566,-99
+2011-12,NBA,3rd,"Tyson Chandler C, Carmelo Anthony F, Dirk Nowitzki F, Rajon Rondo G, Dwyane Wade G",All League,2199,2546,1717,200765,2548,-99
+2010-11,NBA,1st,"Dwight Howard C, Kevin Durant F, LeBron James F, Kobe Bryant G, Derrick Rose G",All League,2730,201142,2544,977,201565,-99
+2010-11,NBA,2nd,"Amar'e Stoudemire C, Pau Gasol F, Dirk Nowitzki F, Dwyane Wade G, Russell Westbrook G",All League,2405,2200,1717,2548,201566,-99
+2010-11,NBA,3rd,"Al Horford C, LaMarcus Aldridge F, Zach Randolph F, Manu Ginóbili G, Chris Paul G",All League,201143,200746,2216,1938,101108,-99
+2009-10,NBA,1st,"Dwight Howard C, Kevin Durant F, LeBron James F, Kobe Bryant G, Dwyane Wade G",All League,2730,201142,2544,977,2548,-99
+2009-10,NBA,2nd,"Amar'e Stoudemire C, Carmelo Anthony F, Dirk Nowitzki F, Steve Nash G, Deron Williams G",All League,2405,2546,1717,959,101114,-99
+2009-10,NBA,3rd,"Andrew Bogut C, Tim Duncan F, Pau Gasol F, Joe Johnson G, Brandon Roy G",All League,101106,1495,2200,2207,200750,-99
+2008-09,NBA,1st,"Dwight Howard C, LeBron James F, Dirk Nowitzki F, Kobe Bryant G, Dwyane Wade G",All League,2730,2544,1717,977,2548,-99
+2008-09,NBA,2nd,"Yao Ming C, Tim Duncan F, Paul Pierce F, Chris Paul G, Brandon Roy G",All League,2397,1495,1718,101108,200750,-99
+2008-09,NBA,3rd,"Shaquille O'Neal C, Carmelo Anthony F, Pau Gasol F, Chauncey Billups G, Tony Parker G",All League,406,2546,2200,1497,2225,-99
+2007-08,NBA,1st,"Dwight Howard C, Kevin Garnett F, LeBron James F, Kobe Bryant G, Chris Paul G",All League,2730,708,2544,977,101108,-99
+2007-08,NBA,2nd,"Amar'e Stoudemire C, Tim Duncan F, Dirk Nowitzki F, Steve Nash G, Deron Williams G",All League,2405,1495,1717,959,101114,-99
+2007-08,NBA,3rd,"Yao Ming C, Carlos Boozer F, Paul Pierce F, Manu Ginóbili G, Tracy McGrady G",All League,2397,2430,1718,1938,1503,-99
+2006-07,NBA,1st,"Amar'e Stoudemire C, Tim Duncan F, Dirk Nowitzki F, Kobe Bryant G, Steve Nash G",All League,2405,1495,1717,977,959,-99
+2006-07,NBA,2nd,"Yao Ming C, Chris Bosh F, LeBron James F, Gilbert Arenas G, Tracy McGrady G",All League,2397,2547,2544,2240,1503,-99
+2006-07,NBA,3rd,"Dwight Howard C, Carmelo Anthony F, Kevin Garnett F, Chauncey Billups G, Dwyane Wade G",All League,2730,2546,708,1497,2548,-99
+2005-06,NBA,1st,"Shaquille O'Neal C, LeBron James F, Dirk Nowitzki F, Kobe Bryant G, Steve Nash G",All League,406,2544,1717,977,959,-99
+2005-06,NBA,2nd,"Ben Wallace C, Elton Brand F, Tim Duncan F, Chauncey Billups G, Dwyane Wade G",All League,1112,1882,1495,1497,2548,-99
+2005-06,NBA,3rd,"Yao Ming C, Carmelo Anthony F, Shawn Marion F, Gilbert Arenas G, Allen Iverson G",All League,2397,2546,1890,2240,947,-99
+2004-05,NBA,1st,"Shaquille O'Neal C, Tim Duncan F, Dirk Nowitzki F, Allen Iverson G, Steve Nash G",All League,406,1495,1717,947,959,-99
+2004-05,NBA,2nd,"Amar'e Stoudemire C, Kevin Garnett F, LeBron James F, Ray Allen G, Dwyane Wade G",All League,2405,708,2544,951,2548,-99
+2004-05,NBA,3rd,"Ben Wallace C, Shawn Marion F, Tracy McGrady F, Gilbert Arenas G, Kobe Bryant G",All League,1112,1890,1503,2240,977,-99
+2003-04,NBA,1st,"Shaquille O'Neal C, Tim Duncan F, Kevin Garnett F, Kobe Bryant G, Jason Kidd G",All League,406,1495,708,977,467,-99
+2003-04,NBA,2nd,"Ben Wallace C, Jermaine O'Neal F, Peja Stojaković F, Sam Cassell G, Tracy McGrady G",All League,1112,979,978,208,1503,-99
+2003-04,NBA,3rd,"Yao Ming C, Metta World Peace F, Dirk Nowitzki F, Baron Davis G, Michael Redd G",All League,2397,1897,1717,1884,2072,-99
+2002-03,NBA,1st,"Shaquille O'Neal C, Tim Duncan F, Kevin Garnett F, Kobe Bryant G, Tracy McGrady G",All League,406,1495,708,977,1503,-99
+2002-03,NBA,2nd,"Ben Wallace C, Dirk Nowitzki F, Chris Webber F, Allen Iverson G, Jason Kidd G",All League,1112,1717,185,947,467,-99
+2002-03,NBA,3rd,"Jermaine O'Neal C, Jamal Mashburn F, Paul Pierce F, Stephon Marbury G, Steve Nash G",All League,979,469,1718,950,959,-99
+2001-02,NBA,1st,"Shaquille O'Neal C, Tim Duncan F, Tracy McGrady F, Kobe Bryant G, Jason Kidd G",All League,406,1495,1503,977,467,-99
+2001-02,NBA,2nd,"Dirk Nowitzki C, Kevin Garnett F, Chris Webber F, Allen Iverson G, Gary Payton G",All League,1717,708,185,947,56,-99
+2001-02,NBA,3rd,"Dikembe Mutombo C, Jermaine O'Neal F, Ben Wallace F, Steve Nash G, Paul Pierce G",All League,87,979,1112,959,1718,-99
+2000-01,NBA,1st,"Shaquille O'Neal C, Tim Duncan F, Chris Webber F, Allen Iverson G, Jason Kidd G",All League,406,1495,185,947,467,-99
+2000-01,NBA,2nd,"Dikembe Mutombo C, Vince Carter F, Kevin Garnett F, Kobe Bryant G, Tracy McGrady G",All League,87,1713,708,977,1503,-99
+2000-01,NBA,3rd,"David Robinson C, Karl Malone F, Dirk Nowitzki F, Ray Allen G, Gary Payton G",All League,764,252,1717,951,56,-99
+1999-00,NBA,1st,"Shaquille O'Neal C, Tim Duncan F, Kevin Garnett F, Jason Kidd G, Gary Payton G",All League,406,1495,708,467,56,-99
+1999-00,NBA,2nd,"Alonzo Mourning C, Grant Hill F, Karl Malone F, Kobe Bryant G, Allen Iverson G",All League,297,255,252,977,947,-99
+1999-00,NBA,3rd,"David Robinson C, Vince Carter F, Chris Webber F, Eddie Jones G, Stephon Marbury G",All League,764,1713,185,224,950,-99
+1998-99,NBA,1st,"Alonzo Mourning C, Tim Duncan F, Karl Malone F, Allen Iverson G, Jason Kidd G",All League,297,1495,252,947,467,-99
+1998-99,NBA,2nd,"Shaquille O'Neal C, Grant Hill F, Chris Webber F, Tim Hardaway G, Gary Payton G",All League,406,255,185,896,56,-99
+1998-99,NBA,3rd,"Hakeem Olajuwon C, Kevin Garnett F, Antonio McDyess F, Kobe Bryant G, John Stockton G",All League,165,708,686,977,304,-99
+1997-98,NBA,1st,"Shaquille O'Neal C, Tim Duncan F, Karl Malone F, Michael Jordan G, Gary Payton G",All League,406,1495,252,893,56,-99
+1997-98,NBA,2nd,"David Robinson C, Vin Baker F, Grant Hill F, Tim Hardaway G, Rod Strickland G",All League,764,452,255,896,393,-99
+1997-98,NBA,3rd,"Dikembe Mutombo C, Scottie Pippen F, Glen Rice F, Reggie Miller G, Mitch Richmond G",All League,87,937,203318,397,782,-99
+1996-97,NBA,1st,"Hakeem Olajuwon C, Grant Hill F, Karl Malone F, Tim Hardaway G, Michael Jordan G",All League,165,255,252,896,893,-99
+1996-97,NBA,2nd,"Patrick Ewing C, Scottie Pippen F, Glen Rice F, Gary Payton G, Mitch Richmond G",All League,121,937,203318,56,782,-99
+1996-97,NBA,3rd,"Shaquille O'Neal C, Vin Baker F, Anthony Mason F, Anfernee Hardaway G, John Stockton G",All League,406,452,193,358,304,-99
+1995-96,NBA,1st,"David Robinson C, Karl Malone F, Scottie Pippen F, Anfernee Hardaway G, Michael Jordan G",All League,764,252,937,358,893,-99
+1995-96,NBA,2nd,"Hakeem Olajuwon C, Grant Hill F, Shawn Kemp F, Gary Payton G, John Stockton G",All League,165,255,431,56,304,-99
+1995-96,NBA,3rd,"Shaquille O'Neal C, Charles Barkley F, Juwan Howard F, Reggie Miller G, Mitch Richmond G",All League,406,787,436,397,782,-99
+1994-95,NBA,1st,"David Robinson C, Karl Malone F, Scottie Pippen F, Anfernee Hardaway G, John Stockton G",All League,764,252,937,358,304,-99
+1994-95,NBA,2nd,"Shaquille O'Neal C, Charles Barkley F, Shawn Kemp F, Gary Payton G, Mitch Richmond G",All League,406,787,431,56,782,-99
+1994-95,NBA,3rd,"Hakeem Olajuwon C, Dennis Rodman F, Detlef Schrempf F, Clyde Drexler G, Reggie Miller G",All League,165,23,96,17,397,-99
+1993-94,NBA,1st,"Hakeem Olajuwon C, Karl Malone F, Scottie Pippen F, Latrell Sprewell G, John Stockton G",All League,165,252,937,84,304,-99
+1993-94,NBA,2nd,"David Robinson C, Charles Barkley F, Shawn Kemp F, Kevin Johnson G, Mitch Richmond G",All League,764,787,431,134,782,-99
+1993-94,NBA,3rd,"Shaquille O'Neal C, Derrick Coleman F, Dominique Wilkins F, Gary Payton G, Mark Price G",All League,406,934,1122,56,899,-99
+1992-93,NBA,1st,"Hakeem Olajuwon C, Charles Barkley F, Karl Malone F, Michael Jordan G, Mark Price G",All League,165,787,252,893,899,-99
+1992-93,NBA,2nd,"Patrick Ewing C, Larry Johnson F, Dominique Wilkins F, Joe Dumars G, John Stockton G",All League,121,913,1122,247,304,-99
+1992-93,NBA,3rd,"David Robinson C, Derrick Coleman F, Scottie Pippen F, Tim Hardaway G, Dražen Petrović G",All League,764,934,937,896,77845,-99
+1991-92,NBA,1st,"David Robinson C, Karl Malone F, Chris Mullin F, Clyde Drexler G, Michael Jordan G",All League,764,252,904,17,893,-99
+1991-92,NBA,2nd,"Patrick Ewing C, Charles Barkley F, Scottie Pippen F, Tim Hardaway G, John Stockton G",All League,121,787,937,896,304,-99
+1991-92,NBA,3rd,"Brad Daugherty C, Dennis Rodman F, Kevin Willis F, Kevin Johnson G, Mark Price G",All League,921,23,788,134,899,-99
+1990-91,NBA,1st,"David Robinson C, Charles Barkley F, Karl Malone F, Magic Johnson G, Michael Jordan G",All League,764,787,252,77142,893,-99
+1990-91,NBA,2nd,"Patrick Ewing C, Chris Mullin F, Dominique Wilkins F, Clyde Drexler G, Kevin Johnson G",All League,121,904,1122,17,134,-99
+1990-91,NBA,3rd,"Hakeem Olajuwon C, Bernard King F, James Worthy F, Joe Dumars G, John Stockton G",All League,165,77264,1460,247,304,-99
+1989-90,NBA,1st,"Patrick Ewing C, Charles Barkley F, Karl Malone F, Magic Johnson G, Michael Jordan G",All League,121,787,252,77142,893,-99
+1989-90,NBA,2nd,"Hakeem Olajuwon C, Larry Bird F, Tom Chambers F, Kevin Johnson G, John Stockton G",All League,165,1449,1472,134,304,-99
+1989-90,NBA,3rd,"David Robinson C, Chris Mullin F, James Worthy F, Clyde Drexler G, Joe Dumars G",All League,764,904,1460,17,247,-99
+1988-89,NBA,1st,"Hakeem Olajuwon C, Charles Barkley F, Karl Malone F, Magic Johnson G, Michael Jordan G",All League,165,787,252,77142,893,-99
+1988-89,NBA,2nd,"Patrick Ewing C, Tom Chambers F, Chris Mullin F, Kevin Johnson G, John Stockton G",All League,121,1472,904,134,304,-99
+1988-89,NBA,3rd,"Robert Parish C, Terry Cummings F, Dominique Wilkins F, Dale Ellis G, Mark Price G",All League,305,187,1122,107,899,-99
+1987-88,NBA,1st,"Hakeem Olajuwon C, Charles Barkley F, Larry Bird F, Magic Johnson G, Michael Jordan G",All League,165,787,1449,77142,893,-99
+1987-88,NBA,2nd,"Patrick Ewing C, Karl Malone F, Dominique Wilkins F, Clyde Drexler G, John Stockton G",All League,121,252,1122,17,304,-99
+1986-87,NBA,1st,"Hakeem Olajuwon C, Larry Bird F, Kevin McHale F, Magic Johnson G, Michael Jordan G",All League,165,1449,1450,77142,893,-99
+1986-87,NBA,2nd,"Moses Malone C, Charles Barkley F, Dominique Wilkins F, Fat Lever G, Isiah Thomas G",All League,77449,787,1122,77376,78318,-99
+1985-86,NBA,1st,"Kareem Abdul-Jabbar C, Larry Bird F, Dominique Wilkins F, Magic Johnson G, Isiah Thomas G",All League,76003,1449,1122,77142,78318,-99
+1985-86,NBA,2nd,"Hakeem Olajuwon C, Charles Barkley F, Alex English F, Sidney Moncrief G, Alvin Robertson G",All League,165,787,76673,77626,926,-99
+1984-85,NBA,1st,"Moses Malone C, Larry Bird F, Bernard King F, Magic Johnson G, Isiah Thomas G",All League,77449,1449,77264,77142,78318,-99
+1984-85,NBA,2nd,"Kareem Abdul-Jabbar C, Terry Cummings F, Ralph Sampson F, Michael Jordan G, Sidney Moncrief G",All League,76003,187,78055,893,77626,-99
+1983-84,NBA,1st,"Kareem Abdul-Jabbar C, Larry Bird F, Bernard King F, Magic Johnson G, Isiah Thomas G",All League,76003,1449,77264,77142,78318,-99
+1983-84,NBA,2nd,"Moses Malone C, Adrian Dantley F, Julius Erving F, Sidney Moncrief G, Jim Paxson G",All League,77449,76504,76681,77626,77819,-99
+1982-83,NBA,1st,"Moses Malone C, Larry Bird F, Julius Erving F, Magic Johnson G, Sidney Moncrief G",All League,77449,1449,76681,77142,77626,-99
+1982-83,NBA,2nd,"Kareem Abdul-Jabbar C, Alex English F, Buck Williams F, George Gervin G, Isiah Thomas G",All League,76003,76673,433,76804,78318,-99
+1981-82,NBA,1st,"Moses Malone C, Larry Bird F, Julius Erving F, George Gervin G, Gus Williams G",All League,77449,1449,76681,76804,78549,-99
+1981-82,NBA,2nd,"Robert Parish C, Alex English F, Bernard King F, Magic Johnson G, Sidney Moncrief G",All League,305,76673,77264,77142,77626,-99
+1980-81,NBA,1st,"Kareem Abdul-Jabbar C, Larry Bird F, Julius Erving F, George Gervin G, Dennis Johnson G",All League,76003,1449,76681,76804,77141,-99
+1980-81,NBA,2nd,"Moses Malone C, Adrian Dantley F, Marques Johnson F, Tiny Archibald G, Otis Birdsong G",All League,77449,76504,77160,76054,76170,-99
+1979-80,NBA,1st,"Kareem Abdul-Jabbar C, Larry Bird F, Julius Erving F, George Gervin G, Paul Westphal G",All League,76003,1449,76681,76804,78500,-99
+1979-80,NBA,2nd,"Moses Malone C, Marques Johnson F, Dan Roundfield F, Dennis Johnson G, Gus Williams G",All League,77449,77160,78025,77141,78549,-99
+2022-23,NBA,1st,"Paolo Banchero, Walker Kessler, Bennedict Mathurin, Keegan Murray, Jalen Williams",All Rookie,1631094,1631117,1631097,1631099,1631114,-99
+2022-23,NBA,2nd,"Jalen Duren, Tari Eason, Jaden Ivey, Jabari Smith, Jeremy Sochan",All Rookie,1631105,1631106,1631093,2074,1631110,-99
+2021-22,NBA,1st,"Scottie Barnes, Cade Cunningham, Evan Mobley, Franz Wagner, Jalen Green",All Rookie,1630567,1630595,1630596,1630532,1630224,-99
+2021-22,NBA,2nd,"Herbert Jones, Josh Giddey, Bones Hyland, Ayo Dosunmu, Chris Duarte",All Rookie,1630529,1630581,1630538,1630245,1630537,-99
+2020-21,NBA,1st,"LaMelo Ball, Saddiq Bey, Anthony Edwards, Tyrese Haliburton, Jae'Sean Tate",All Rookie,1630163,1630180,1630162,1630169,1630256,-99
+2020-21,NBA,2nd,"Desmond Bane, Isaac Okoro, Immanuel Quickley, Isaiah Stewart, Patrick Williams",All Rookie,1630217,1630171,1630193,1630191,1630172,-99
+2019-20,NBA,1st,"Ja Morant, Kendrick Nunn, Brandon Clarke, Zion Williamson, Eric Paschall",All Rookie,1629630,1629134,1629634,1629627,1629672,-99
+2019-20,NBA,2nd,"Tyler Herro, Terence Davis, Coby White, P.J. Washington, Rui Hachimura",All Rookie,1629639,1629056,1629632,1629023,1629060,-99
+2018-19,NBA,1st,"Luka Dončić, Trae Young, Deandre Ayton, Jaren Jackson, Marvin Bagley",All Rookie,1629029,1629027,1629028,1114,1628963,-99
+2018-19,NBA,2nd,"Shai Gilgeous-Alexander, Collin Sexton, Landry Shamet, Mitchell Robinson, Kevin Huerter",All Rookie,1628983,1629012,1629013,1629011,1628989,-99
+2017-18,NBA,1st,"Donovan Mitchell, Ben Simmons, Jayson Tatum, Kyle Kuzma, Lauri Markkanen",All Rookie,1628378,1627732,1628369,1628398,1628374,-99
+2017-18,NBA,2nd,"Dennis Smith, Lonzo Ball, John Collins, Bogdan Bogdanović, Josh Jackson",All Rookie,1628372,1628366,1628381,203992,1628367,-99
+2016-17,NBA,1st,"Malcolm Brogdon, Dario Šarić, Joel Embiid, Buddy Hield, Willy Hernangómez",All Rookie,1627763,203967,203954,1627741,1626195,-99
+2016-17,NBA,2nd,"Jamal Murray, Jaylen Brown, Marquese Chriss, Brandon Ingram, Yogi Ferrell",All Rookie,1627750,1627759,1627737,1627742,1627812,-99
+2015-16,NBA,1st,"Karl-Anthony Towns, Kristaps Porziņģis, Devin Booker, Nikola Jokić, Jahlil Okafor",All Rookie,1626157,204001,1626164,203999,1626143,-99
+2015-16,NBA,2nd,"Justise Winslow, D'Angelo Russell, Emmanuel Mudiay, Myles Turner, Willie Cauley-Stein",All Rookie,1626159,1626156,1626144,1626167,1626161,-99
+2014-15,NBA,1st,"Andrew Wiggins, Nikola Mirotić, Nerlens Noel, Elfrid Payton, Jordan Clarkson",All Rookie,203952,202703,203457,203901,203903,-99
+2014-15,NBA,2nd,"Marcus Smart, Zach LaVine, Bojan Bogdanović, Jusuf Nurkić, Langston Galloway",All Rookie,203935,203897,202711,203994,204038,-99
+2013-14,NBA,1st,"Michael Carter-Williams, Victor Oladipo, Trey Burke, Mason Plumlee, Tim Hardaway",All Rookie,203487,203506,203504,203486,896,-99
+2013-14,NBA,2nd,"Kelly Olynyk, Giannis Antetokounmpo, Gorgui Dieng, Cody Zeller, Steven Adams",All Rookie,203482,203507,203476,203469,203500,-99
+2012-13,NBA,1st,"Harrison Barnes, Bradley Beal, Anthony Davis, Damian Lillard, Dion Waiters",All Rookie,203084,203078,203076,203081,203079,-99
+2012-13,NBA,2nd,"Andre Drummond, Michael Kidd-Gilchrist, Kyle Singler, Jonas Valančiūnas, Tyler Zeller",All Rookie,203083,203077,202713,202685,203092,-99
+2011-12,NBA,1st,"Kenneth Faried, Kyrie Irving, Ricky Rubio, Klay Thompson, Brandon Knight, Kawhi Leonard (T)",All Rookie,202702,202681,201937,202691,202688,202695
+2011-12,NBA,2nd,"MarShon Brooks, Chandler Parsons, Isaiah Thomas, Tristan Thompson, Derrick Williams",All Rookie,202705,202718,202738,202684,202682,-99
+2010-11,NBA,1st,"DeMarcus Cousins, Landry Fields, Blake Griffin, Gary Neal, John Wall",All Rookie,202326,202361,201933,202390,202322,-99
+2010-11,NBA,2nd,"Eric Bledsoe, Derrick Favors, Paul George, Wesley Johnson, Greg Monroe",All Rookie,202339,202324,202331,202325,202328,-99
+2009-10,NBA,1st,"Darren Collison, Stephen Curry, Tyreke Evans, Taj Gibson, Brandon Jennings",All Rookie,201954,201939,201936,201959,201943,-99
+2009-10,NBA,2nd,"DeJuan Blair, Jonny Flynn, James Harden, Jonas Jerebko, Marcus Thornton",All Rookie,201971,201938,201935,201973,201977,-99
+2008-09,NBA,1st,"Michael Beasley, Brook Lopez, O.J. Mayo, Derrick Rose, Russell Westbrook",All Rookie,201563,201572,201564,201565,201566,-99
+2008-09,NBA,2nd,"Mario Chalmers, Marc Gasol, Eric Gordon, Kevin Love, D.J. Augustin, Rudy Fernández (T)",All Rookie,201596,201188,201569,201567,201571,201164
+2007-08,NBA,1st,"Kevin Durant, Jeff Green, Al Horford, Luis Scola, Al Thornton",All Rookie,201142,201145,201143,2449,201154,-99
+2007-08,NBA,2nd,"Carl Landry, Jamario Moon, Juan Carlos Navarro, Rodney Stuckey, Thaddeus Young",All Rookie,201171,200081,2434,201155,201152,-99
+2006-07,NBA,1st,"Andrea Bargnani, Randy Foye, Rudy Gay, Brandon Roy, LaMarcus Aldridge, Jorge Garbajosa (T)",All Rookie,200745,200751,-99,-99,200746,200816
+2006-07,NBA,2nd,"Paul Millsap, Adam Morrison, Craig Smith, Tyrus Thomas, Walter Herrmann, Rajon Rondo (T)",All Rookie,200794,200747,200783,200748,200835,200765
+2005-06,NBA,1st,"Andrew Bogut, Channing Frye, Chris Paul, Charlie Villanueva, Deron Williams",All Rookie,101106,101112,101108,101111,101114,-99
+2005-06,NBA,2nd,"Raymond Felton, Ryan Gomes, Danny Granger, Luther Head, Marvin Williams",All Rookie,101109,101155,101122,101129,101107,-99
+2004-05,NBA,1st,"Luol Deng, Ben Gordon, Dwight Howard, Andre Iguodala, Emeka Okafor",All Rookie,2736,2732,2730,2738,2731,-99
+2004-05,NBA,2nd,"Josh Childress, Al Jefferson, Nenad Krstić, Jameer Nelson, Josh Smith",All Rookie,2735,2744,2420,2749,2746,-99
+2003-04,NBA,1st,"Carmelo Anthony, Chris Bosh, Kirk Hinrich, LeBron James, Dwyane Wade",All Rookie,2546,2547,2550,2544,2548,-99
+2003-04,NBA,2nd,"Marquis Daniels, T.J. Ford, Udonis Haslem, Jarvis Hayes, Josh Howard",All Rookie,2605,2551,2617,2553,2572,-99
+2002-03,NBA,1st,"Caron Butler, Drew Gooden, Nenê Hilário, Yao Ming, Amar'e Stoudemire",All Rookie,2406,2400,2403,2397,2405,-99
+2002-03,NBA,2nd,"Carlos Boozer, J.R. Bremer, Manu Ginóbili, Gordan Giriček, Jay Williams",All Rookie,2430,2452,1938,1921,2398,-99
+2001-02,NBA,1st,"Shane Battier, Pau Gasol, Andrei Kirilenko, Tony Parker, Jason Richardson",All Rookie,2203,2200,1905,2225,2202,-99
+2001-02,NBA,2nd,"Eddie Griffin, Richard Jefferson, Željko Rebrača, Jamaal Tinsley, Joe Johnson, Vladimir Radmanović (T)",All Rookie,2204,2210,1442,2224,2207,2209
+2000-01,NBA,1st,"Marc Jackson, Kenyon Martin, Darius Miles, Mike Miller, Morris Peterson",All Rookie,1531,2030,2032,2034,2050,-99
+2000-01,NBA,2nd,"Courtney Alexander, Marcus Fizer, Desmond Mason, Chris Mihm, Hedo Türkoğlu",All Rookie,2042,2033,2046,2036,2045,-99
+1999-00,NBA,1st,"Elton Brand, Steve Francis, Andre Miller, Lamar Odom, Wally Szczerbiak",All Rookie,1882,1883,1889,1885,1887,-99
+1999-00,NBA,2nd,"Metta World Peace, Chucky Atkins, Shawn Marion, James Posey, Jason Terry",All Rookie,1897,1088,1890,1899,1891,-99
+1998-99,NBA,1st,"Mike Bibby, Vince Carter, Matt Harpring, Paul Pierce, Jason Williams",All Rookie,1710,1713,1723,1718,1715,-99
+1998-99,NBA,2nd,"Michael Dickerson, Michael Doleac, Antawn Jamison, Cuttino Mobley, Michael Olowokandi",All Rookie,1722,1720,1712,1749,1709,-99
+1997-98,NBA,1st,"Tim Duncan, Zydrunas Ilgauskas, Brevin Knight, Ron Mercer, Keith Van Horn",All Rookie,1495,980,1510,1500,1496,-99
+1997-98,NBA,2nd,"Derek Anderson, Cedric Henderson, Bobby Jackson, Maurice Taylor, Tim Thomas",All Rookie,1507,-99,1517,1508,1501,-99
+1996-97,NBA,1st,"Shareef Abdur-Rahim, Marcus Camby, Allen Iverson, Stephon Marbury, Antoine Walker",All Rookie,949,948,947,950,952,-99
+1996-97,NBA,2nd,"Ray Allen, Kobe Bryant, Kerry Kittles, Travis Knight, Matt Maloney",All Rookie,951,977,954,969,1074,-99
+1995-96,NBA,1st,"Antonio McDyess, Joe Smith, Jerry Stackhouse, Damon Stoudamire, Michael Finley, Arvydas Sabonis (T)",All Rookie,686,693,711,757,714,717
+1995-96,NBA,2nd,"Brent Barry, Tyus Edney, Kevin Garnett, Bryant Reeves, Rasheed Wallace",All Rookie,699,721,708,735,739,-99
+1994-95,NBA,1st,"Brian Grant, Grant Hill, Eddie Jones, Jason Kidd, Glenn Robinson",All Rookie,258,255,224,467,299,-99
+1994-95,NBA,2nd,"Juwan Howard, Eric Montross, Wesley Person, Jalen Rose, Donyell Marshall, Sharone Wright (T)",All Rookie,436,376,445,147,923,412
+1993-94,NBA,1st,"Vin Baker, Anfernee Hardaway, Jamal Mashburn, Isaiah Rider, Chris Webber",All Rookie,452,358,469,375,185,-99
+1993-94,NBA,2nd,"Shawn Bradley, Lindsey Hunter, Toni Kukoč, Dino Rađa, Nick Van Exel",All Rookie,762,283,389,129,89,-99
+1992-93,NBA,1st,"LaPhonso Ellis, Tom Gugliotta, Christian Laettner, Alonzo Mourning, Shaquille O'Neal",All Rookie,111,339,363,297,406,-99
+1992-93,NBA,2nd,"Richard Dumas, Robert Horry, Latrell Sprewell, Clarence Weatherspoon, Walt Williams",All Rookie,30,109,84,221,1005,-99
+1991-92,NBA,1st,"Stacey Augmon, Larry Johnson, Dikembe Mutombo, Billy Owens, Steve Smith",All Rookie,278,913,87,182,0,-99
+1991-92,NBA,2nd,"Terrell Brandon, Rick Fox, Mark Macon, Stanley Roberts, Larry Stewart",All Rookie,210,-99,1855,914,1125,-99
+1990-91,NBA,1st,"Dee Brown, Derrick Coleman, Kendall Gill, Dennis Scott, Lionel Simmons",All Rookie,-99,934,383,192,1489,-99
+1990-91,NBA,2nd,"Mahmoud Abdul-Rauf, Willie Burton, Travis Mays, Gary Payton, Felton Spencer",All Rookie,51,416,77496,56,280,-99
+1989-90,NBA,1st,"Vlade Divac, Sherman Douglas, Tim Hardaway, Pooh Richardson, David Robinson",All Rookie,124,428,896,71,764,-99
+1989-90,NBA,2nd,"Blue Edwards, Sean Elliott, Stacey King, J.R. Reid, Glen Rice",All Rookie,898,251,351,462,203318,-99
+1988-89,NBA,1st,"Willie Anderson, Hersey Hawkins, Mitch Richmond, Charles Smith, Rik Smits",All Rookie,335,765,782,-99,22,-99
+1988-89,NBA,2nd,"Rex Chapman, Kevin Edwards, Chris Morris, Brian Shaw, Rod Strickland",All Rookie,364,236,356,216,393,-99
+1987-88,NBA,1st,"Greg Anderson, Armen Gilliam, Mark Jackson, Derrick McKey, Kenny Smith",All Rookie,246,288,349,365,181,-99
+1986-87,NBA,1st,"Brad Daugherty, Ron Harper, Chuck Person, Roy Tarpley, Hot Rod Williams",All Rookie,921,166,456,78293,73,-99
+1985-86,NBA,1st,"Joe Dumars, Patrick Ewing, Karl Malone, Xavier McDaniel, Charles Oakley",All Rookie,247,121,252,1365,891,-99
+1984-85,NBA,1st,"Charles Barkley, Sam Bowie, Michael Jordan, Hakeem Olajuwon, Sam Perkins",All Rookie,787,76217,893,165,64,-99
+1983-84,NBA,1st,"Jeff Malone, Ralph Sampson, Byron Scott, Steve Stipanovich, Thurl Bailey, Darrell Walker (T)",All Rookie,117,78055,2,78257,1847,78437
+1982-83,NBA,1st,"Terry Cummings, Quintin Dailey, Clark Kellogg, Dominique Wilkins, James Worthy",All Rookie,187,76497,77236,1122,1460,-99
+1981-82,NBA,1st,"Jeff Ruland, Isiah Thomas, Kelly Tripucka, Jay Vincent, Buck Williams",All Rookie,78041,78318,78369,78418,433,-99
+1980-81,NBA,1st,"Joe Barry Carroll, Darrell Griffith, Kevin McHale, Kelvin Ransey, Larry Smith",All Rookie,76353,76890,1450,77911,78195,-99
+1979-80,NBA,1st,"Larry Bird, Bill Cartwright, Dave Greenwood, Magic Johnson, Calvin Natt",All Rookie,1449,76362,76881,77142,77691,-99
+2022-23,NBA,1st,"Alex Caruso, Jrue Holiday, Jaren Jackson, Brook Lopez, Evan Mobley",All Defensive,1627936,201950,1114,201572,1630596,-99
+2022-23,NBA,2nd,"Bam Adebayo, OG Anunoby, Dillon Brooks, Draymond Green, Derrick White",All Defensive,1628389,1628384,1628415,203110,1628401,-99
+2021-22,NBA,1st,"Giannis Antetokounmpo, Mikal Bridges, Rudy Gobert, Jaren Jackson, Marcus Smart",All Defensive,203507,1628969,203497,1114,203935,-99
+2021-22,NBA,2nd,"Bam Adebayo, Draymond Green, Jrue Holiday, Matisse Thybulle, Robert Williams",All Defensive,1628389,203110,201950,1629680,1629057,-99
+2020-21,NBA,1st,"Rudy Gobert, Ben Simmons, Draymond Green, Jrue Holiday, Giannis Antetokounmpo",All Defensive,203497,1627732,203110,201950,203507,-99
+2020-21,NBA,2nd,"Bam Adebayo, Jimmy Butler, Joel Embiid, Matisse Thybulle, Kawhi Leonard",All Defensive,1628389,202710,203954,1629680,202695,-99
+2019-20,NBA,1st,"Giannis Antetokounmpo, Anthony Davis, Ben Simmons, Rudy Gobert, Marcus Smart",All Defensive,203507,203076,1627732,203497,203935,-99
+2019-20,NBA,2nd,"Kawhi Leonard, Brook Lopez, Bam Adebayo, Patrick Beverley, Eric Bledsoe",All Defensive,202695,201572,1628389,201976,202339,-99
+2018-19,NBA,1st,"Rudy Gobert, Paul George, Giannis Antetokounmpo, Marcus Smart, Eric Bledsoe",All Defensive,203497,202331,203507,203935,202339,-99
+2018-19,NBA,2nd,"Jrue Holiday, Klay Thompson, Joel Embiid, Draymond Green, Kawhi Leonard",All Defensive,201950,202691,203954,203110,202695,-99
+2017-18,NBA,1st,"Rudy Gobert, Anthony Davis, Victor Oladipo, Robert Covington, Jrue Holiday",All Defensive,203497,203076,203506,203496,201950,-99
+2017-18,NBA,2nd,"Joel Embiid, Draymond Green, Al Horford, Dejounte Murray, Jimmy Butler",All Defensive,203954,203110,201143,1627749,202710,-99
+2016-17,NBA,1st,"Kawhi Leonard, Draymond Green, Rudy Gobert, Patrick Beverley, Chris Paul",All Defensive,202695,203110,203497,201976,101108,-99
+2016-17,NBA,2nd,"Tony Allen, Danny Green, Andre Roberson, Anthony Davis, Giannis Antetokounmpo",All Defensive,2754,201980,203460,203076,203507,-99
+2015-16,NBA,1st,"Kawhi Leonard, Draymond Green, DeAndre Jordan, Avery Bradley, Chris Paul",All Defensive,202695,203110,201599,202340,101108,-99
+2015-16,NBA,2nd,"Paul Millsap, Paul George, Hassan Whiteside, Tony Allen, Jimmy Butler",All Defensive,200794,202331,202355,2754,202710,-99
+2014-15,NBA,1st,"Kawhi Leonard, Draymond Green, Tony Allen, DeAndre Jordan, Chris Paul",All Defensive,202695,203110,2754,201599,101108,-99
+2014-15,NBA,2nd,"Anthony Davis, Jimmy Butler, Andrew Bogut, John Wall, Tim Duncan",All Defensive,203076,202710,101106,202322,1495,-99
+2013-14,NBA,1st,"Joakim Noah, Paul George, Chris Paul, Serge Ibaka, Andre Iguodala",All Defensive,201149,202331,101108,201586,2738,-99
+2013-14,NBA,2nd,"LeBron James, Patrick Beverley, Jimmy Butler, Kawhi Leonard, Roy Hibbert",All Defensive,2544,201976,202710,202695,201579,-99
+2012-13,NBA,1st,"Tony Allen, Serge Ibaka, LeBron James, Chris Paul, Tyson Chandler, Joakim Noah (T)",All Defensive,2754,201586,2544,101108,2199,201149
+2012-13,NBA,2nd,"Avery Bradley, Mike Conley, Tim Duncan, Marc Gasol, Paul George",All Defensive,202340,201144,1495,201188,202331,-99
+2011-12,NBA,1st,"Tony Allen, Dwight Howard, Serge Ibaka, LeBron James, Chris Paul",All Defensive,2754,2730,201586,2544,101108,-99
+2011-12,NBA,2nd,"Kobe Bryant, Tyson Chandler, Luol Deng, Kevin Garnett, Rajon Rondo",All Defensive,977,2199,2736,708,200765,-99
+2010-11,NBA,1st,"Kobe Bryant, Kevin Garnett, Dwight Howard, LeBron James, Rajon Rondo",All Defensive,977,708,2730,2544,200765,-99
+2010-11,NBA,2nd,"Tony Allen, Tyson Chandler, Andre Iguodala, Joakim Noah, Chris Paul",All Defensive,2754,2199,2738,201149,101108,-99
+2009-10,NBA,1st,"Kobe Bryant, Dwight Howard, LeBron James, Rajon Rondo, Gerald Wallace",All Defensive,977,2730,2544,200765,2222,-99
+2009-10,NBA,2nd,"Tim Duncan, Thabo Sefolosha, Josh Smith, Anderson Varejão, Dwyane Wade",All Defensive,1495,200757,2746,2760,2548,-99
+2008-09,NBA,1st,"Kobe Bryant, Kevin Garnett, Dwight Howard, LeBron James, Chris Paul",All Defensive,977,708,2730,2544,101108,-99
+2008-09,NBA,2nd,"Metta World Peace, Shane Battier, Tim Duncan, Rajon Rondo, Dwyane Wade",All Defensive,1897,2203,1495,200765,2548,-99
+2007-08,NBA,1st,"Bruce Bowen, Kobe Bryant, Marcus Camby, Tim Duncan, Kevin Garnett",All Defensive,1477,977,948,1495,708,-99
+2007-08,NBA,2nd,"Shane Battier, Raja Bell, Dwight Howard, Chris Paul, Tayshaun Prince",All Defensive,2203,1952,2730,101108,2419,-99
+2006-07,NBA,1st,"Raja Bell, Bruce Bowen, Kobe Bryant, Marcus Camby, Tim Duncan",All Defensive,1952,1477,977,948,1495,-99
+2006-07,NBA,2nd,"Kevin Garnett, Kirk Hinrich, Jason Kidd, Tayshaun Prince, Ben Wallace",All Defensive,708,2550,467,2419,1112,-99
+2005-06,NBA,1st,"Metta World Peace, Bruce Bowen, Andrei Kirilenko, Ben Wallace, Kobe Bryant, Jason Kidd (T)",All Defensive,1897,1477,1905,1112,977,467
+2005-06,NBA,2nd,"Chauncey Billups, Marcus Camby, Tim Duncan, Kevin Garnett, Tayshaun Prince",All Defensive,1497,948,1495,708,2419,-99
+2004-05,NBA,1st,"Bruce Bowen, Tim Duncan, Kevin Garnett, Larry Hughes, Ben Wallace",All Defensive,1477,1495,708,1716,1112,-99
+2004-05,NBA,2nd,"Chauncey Billups, Marcus Camby, Andrei Kirilenko, Tayshaun Prince, Jason Kidd, Dwyane Wade (T)",All Defensive,1497,948,1905,2419,467,2548
+2003-04,NBA,1st,"Metta World Peace, Bruce Bowen, Kobe Bryant, Kevin Garnett, Ben Wallace",All Defensive,1897,1477,977,708,1112,-99
+2003-04,NBA,2nd,"Doug Christie, Tim Duncan, Jason Kidd, Andrei Kirilenko, Theo Ratliff",All Defensive,57,1495,467,1905,689,-99
+2002-03,NBA,1st,"Kobe Bryant, Doug Christie, Tim Duncan, Kevin Garnett, Ben Wallace",All Defensive,977,57,1495,708,1112,-99
+2002-03,NBA,2nd,"Metta World Peace, Bruce Bowen, Jason Kidd, Shaquille O'Neal, Eric Snow",All Defensive,1897,1477,467,406,727,-99
+2001-02,NBA,1st,"Tim Duncan, Kevin Garnett, Jason Kidd, Gary Payton, Ben Wallace",All Defensive,1495,708,467,56,1112,-99
+2001-02,NBA,2nd,"Bruce Bowen, Kobe Bryant, Doug Christie, Dikembe Mutombo, Clifford Robinson",All Defensive,1477,977,57,87,361,-99
+2000-01,NBA,1st,"Tim Duncan, Kevin Garnett, Jason Kidd, Dikembe Mutombo, Gary Payton",All Defensive,1495,708,467,87,56,-99
+2000-01,NBA,2nd,"Bruce Bowen, P.J. Brown, Kobe Bryant, Doug Christie, Shaquille O'Neal",All Defensive,1477,136,977,57,406,-99
+1999-00,NBA,1st,"Kobe Bryant, Tim Duncan, Kevin Garnett, Alonzo Mourning, Gary Payton",All Defensive,977,1495,708,297,56,-99
+1999-00,NBA,2nd,"Eddie Jones, Jason Kidd, Shaquille O'Neal, Scottie Pippen, Clifford Robinson",All Defensive,224,467,406,937,361,-99
+1998-99,NBA,1st,"Tim Duncan, Jason Kidd, Alonzo Mourning, Gary Payton, Karl Malone, Scottie Pippen (T)",All Defensive,1495,467,297,56,252,937
+1998-99,NBA,2nd,"Mookie Blaylock, P.J. Brown, Eddie Jones, Dikembe Mutombo, Theo Ratliff",All Defensive,302,136,224,87,689,-99
+1997-98,NBA,1st,"Michael Jordan, Karl Malone, Dikembe Mutombo, Gary Payton, Scottie Pippen",All Defensive,893,252,87,56,937,-99
+1997-98,NBA,2nd,"Mookie Blaylock, Tim Duncan, Eddie Jones, Charles Oakley, David Robinson",All Defensive,302,1495,224,891,764,-99
+1996-97,NBA,1st,"Michael Jordan, Karl Malone, Dikembe Mutombo, Gary Payton, Scottie Pippen",All Defensive,893,252,87,56,937,-99
+1996-97,NBA,2nd,"Mookie Blaylock, P.J. Brown, Anthony Mason, Hakeem Olajuwon, John Stockton",All Defensive,302,136,193,165,304,-99
+1995-96,NBA,1st,"Michael Jordan, Gary Payton, Scottie Pippen, David Robinson, Dennis Rodman",All Defensive,893,56,937,764,23,-99
+1995-96,NBA,2nd,"Mookie Blaylock, Horace Grant, Derrick McKey, Hakeem Olajuwon, Bobby Phills",All Defensive,302,270,365,165,184,-99
+1994-95,NBA,1st,"Mookie Blaylock, Gary Payton, Scottie Pippen, David Robinson, Dennis Rodman",All Defensive,302,56,937,764,23,-99
+1994-95,NBA,2nd,"Horace Grant, Derrick McKey, Nate McMillan, Dikembe Mutombo, John Stockton",All Defensive,270,365,203,87,304,-99
+1993-94,NBA,1st,"Mookie Blaylock, Charles Oakley, Hakeem Olajuwon, Gary Payton, Scottie Pippen",All Defensive,302,891,165,56,937,-99
+1993-94,NBA,2nd,"Horace Grant, Nate McMillan, David Robinson, Dennis Rodman, Latrell Sprewell",All Defensive,270,203,764,23,84,-99
+1992-93,NBA,1st,"Joe Dumars, Michael Jordan, Hakeem Olajuwon, Scottie Pippen, Dennis Rodman",All Defensive,247,893,165,937,23,-99
+1992-93,NBA,2nd,"Horace Grant, Dan Majerle, Larry Nance, David Robinson, John Starks",All Defensive,270,105,77685,764,317,-99
+1991-92,NBA,1st,"Joe Dumars, Michael Jordan, Scottie Pippen, David Robinson, Dennis Rodman",All Defensive,247,893,937,764,23,-99
+1991-92,NBA,2nd,"Patrick Ewing, Larry Nance, John Stockton, Buck Williams, Micheal Williams",All Defensive,121,77685,304,433,52,-99
+1990-91,NBA,1st,"Michael Jordan, Alvin Robertson, David Robinson, Dennis Rodman, Buck Williams",All Defensive,893,926,764,23,433,-99
+1990-91,NBA,2nd,"Joe Dumars, Dan Majerle, Hakeem Olajuwon, Scottie Pippen, John Stockton",All Defensive,247,105,165,937,304,-99
+1989-90,NBA,1st,"Joe Dumars, Michael Jordan, Hakeem Olajuwon, Dennis Rodman, Buck Williams",All Defensive,247,893,165,23,433,-99
+1989-90,NBA,2nd,"Derek Harper, Rick Mahorn, Kevin McHale, Alvin Robertson, David Robinson",All Defensive,157,328,1450,926,764,-99
+1988-89,NBA,1st,"Joe Dumars, Mark Eaton, Michael Jordan, Larry Nance, Dennis Rodman",All Defensive,247,76631,893,77685,23,-99
+1988-89,NBA,2nd,"Patrick Ewing, A.C. Green, Kevin McHale, Alvin Robertson, John Stockton",All Defensive,121,920,1450,926,304,-99
+1987-88,NBA,1st,"Michael Cooper, Michael Jordan, Rodney McCray, Kevin McHale, Hakeem Olajuwon",All Defensive,76444,893,1622,1450,165,-99
+1987-88,NBA,2nd,"Fat Lever, Karl Malone, Alvin Robertson, Buck Williams, Mark Eaton, Patrick Ewing (T)",All Defensive,77376,252,926,433,76631,121
+1986-87,NBA,1st,"Michael Cooper, Dennis Johnson, Kevin McHale, Hakeem Olajuwon, Alvin Robertson",All Defensive,76444,77141,1450,165,926,-99
+1986-87,NBA,2nd,"Maurice Cheeks, Mark Eaton, Derek Harper, Rodney McCray, Paul Pressey",All Defensive,76385,76631,157,1622,77879,-99
+1985-86,NBA,1st,"Maurice Cheeks, Mark Eaton, Kevin McHale, Sidney Moncrief, Paul Pressey",All Defensive,76385,76631,1450,77626,77879,-99
+1985-86,NBA,2nd,"Manute Bol, Michael Cooper, Bill Hanzlik, Dennis Johnson, Alvin Robertson",All Defensive,76195,76444,76944,77141,926,-99
+1984-85,NBA,1st,"Maurice Cheeks, Michael Cooper, Mark Eaton, Sidney Moncrief, Paul Pressey",All Defensive,76385,76444,76631,77626,77879,-99
+1984-85,NBA,2nd,"T.R. Dunn, Dennis Johnson, Bobby Jones, Hakeem Olajuwon, Danny Vranes",All Defensive,76618,77141,77193,165,78423,-99
+1983-84,NBA,1st,"Maurice Cheeks, Michael Cooper, Bobby Jones, Sidney Moncrief, Tree Rollins",All Defensive,76385,76444,77193,77626,78014,-99
+1983-84,NBA,2nd,"Kareem Abdul-Jabbar, Larry Bird, T.R. Dunn, Dennis Johnson, Dan Roundfield",All Defensive,76003,1449,76618,77141,78025,-99
+1982-83,NBA,1st,"Bobby Jones, Moses Malone, Sidney Moncrief, Dan Roundfield, Maurice Cheeks, Dennis Johnson (T)",All Defensive,77193,77449,77626,78025,76385,77141
+1982-83,NBA,2nd,"Larry Bird, Michael Cooper, T.R. Dunn, Kevin McHale, Tree Rollins",All Defensive,1449,76444,76618,1450,78014,-99
+1981-82,NBA,1st,"Michael Cooper, Dennis Johnson, Bobby Jones, Caldwell Jones, Dan Roundfield",All Defensive,76444,77141,77193,77175,78025,-99
+1981-82,NBA,2nd,"Larry Bird, Quinn Buckner, Sidney Moncrief, Lonnie Shelton, Jack Sikma",All Defensive,1449,76296,77626,78133,78149,-99
+1980-81,NBA,1st,"Kareem Abdul-Jabbar, Dennis Johnson, Bobby Jones, Caldwell Jones, Micheal Ray Richardson",All Defensive,76003,77141,77193,77175,77952,-99
+1980-81,NBA,2nd,"Quinn Buckner, George Johnson, Dan Roundfield, Kermit Washington, Dudley Bradley, Michael Cooper (T)",All Defensive,76296,77149,78025,78467,76231,76444
+1979-80,NBA,1st,"Kareem Abdul-Jabbar, Dennis Johnson, Bobby Jones, Dan Roundfield, Don Buse, Micheal Ray Richardson (T)",All Defensive,76003,77141,77193,78025,76317,77952
+1979-80,NBA,2nd,"Quinn Buckner, Dave Cowens, Eddie Johnson, Kermit Washington, Scott Wedman",All Defensive,76296,76462,-99,78467,78482,-99
