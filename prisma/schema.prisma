@@ -1,0 +1,342 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model player {
+  player_id                                          Int                     @id @default(autoincrement())
+  from                                               Int?
+  to                                                 Int?
+  pos                                                String?
+  ht                                                 Int?
+  wt                                                 Decimal?                @db.Decimal(4, 1)
+  birth_date                                         DateTime?               @db.Date
+  colleges                                           String?                 @db.VarChar(200)
+  player_name                                        String                  @db.VarChar(100)
+  individual_awards                                  individual_awards?
+  player_career_avg                                  player_career_avg[]
+  player_stats_advanced                              player_stats_advanced[]
+  player_stats_per_game                              player_stats_per_game[]
+  player_stats_per_poss                              player_stats_per_poss[]
+  player_stats_totals                                player_stats_totals[]
+  team_selection_team_selection_player_fiveToplayer  team_selection[]        @relation("team_selection_player_fiveToplayer")
+  team_selection_team_selection_player_fourToplayer  team_selection[]        @relation("team_selection_player_fourToplayer")
+  team_selection_team_selection_player_oneToplayer   team_selection[]        @relation("team_selection_player_oneToplayer")
+  team_selection_team_selection_player_sixToplayer   team_selection[]        @relation("team_selection_player_sixToplayer")
+  team_selection_team_selection_player_threeToplayer team_selection[]        @relation("team_selection_player_threeToplayer")
+  team_selection_team_selection_player_twoToplayer   team_selection[]        @relation("team_selection_player_twoToplayer")
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model individual_awards {
+  player_id    Int     @id
+  player_name  String?
+  lg           String?
+  mvp_count    BigInt?
+  mvp_seasons  String?
+  roy_season   String?
+  dpoy_count   BigInt?
+  dpoy_seasons String?
+  mip_count    BigInt?
+  mip_seasons  String?
+  smoy_count   BigInt?
+  smoy_seasons String?
+  fmvp_count   BigInt?
+  fmvp_seasons String?
+  player       player  @relation(fields: [player_id], references: [player_id], onDelete: Cascade, onUpdate: NoAction)
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model player_stats_advanced {
+  player_id   Int
+  player_name String?
+  pos         String?
+  age         BigInt?
+  tm          String
+  g           BigInt?
+  mp          BigInt?
+  per         Float?
+  ts_percent  Float?
+  par         Float?
+  ftr         Float?
+  orb_percent Float?
+  drb_percent Float?
+  trb_percent Float?
+  ast_percent Float?
+  stl_percent Float?
+  blk_percent Float?
+  tov_percent Float?
+  usg_percent Float?
+  ows         Float?
+  dws         Float?
+  ws          Float?
+  ws_48       Float?
+  obpm        Float?
+  dbpm        Float?
+  bpm         Float?
+  vorp        Float?
+  year        Int
+  playoffs_s  String  @db.VarChar
+  player      player  @relation(fields: [player_id], references: [player_id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@id([player_id, tm, year, playoffs_s])
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model player_stats_per_game {
+  player_id     Int
+  pos           String?
+  age           Int?
+  tm            String
+  games         Int?
+  gs            Int?
+  mp            Int?
+  fg            Float?
+  fga           Float?
+  fg_percent    Float?
+  threeP        Float?
+  threePA       Float?
+  three_percent Float?
+  twoP          Float?
+  twoPA         Float?
+  two_percent   Float?
+  eFG_percent   Float?
+  ft            Float?
+  fta           Float?
+  ft_percent    Float?
+  orb           Float?
+  drb           Float?
+  trb           Float?
+  ast           Float?
+  stl           Float?
+  blk           Float?
+  tov           Float?
+  pf            Float?
+  pts           Float?
+  year          Int
+  playoffs_s    String  @db.VarChar
+  player_name   String?
+  player        player  @relation(fields: [player_id], references: [player_id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@id([player_id, tm, year, playoffs_s])
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model player_stats_per_poss {
+  player_id     Int
+  player_name   String?
+  pos           String?
+  age           BigInt?
+  tm            String
+  games         BigInt?
+  gs            BigInt?
+  mp            BigInt?
+  fg            Float?
+  fga           Float?
+  fg_percent    Float?
+  threeP        Float?
+  threePA       Float?
+  three_percent Float?
+  twoP          Float?
+  twoPA         Float?
+  two_percent   Float?
+  ft            Float?
+  fta           Float?
+  ft_percent    Float?
+  orb           Float?
+  drb           Float?
+  trb           Float?
+  ast           Float?
+  stl           Float?
+  blk           Float?  @db.Real
+  tov           Float?  @db.Real
+  pf            Float?
+  pts           Float?
+  ortg          BigInt?
+  drtg          BigInt?
+  year          Int
+  playoffs_s    String  @db.VarChar
+  player        player  @relation(fields: [player_id], references: [player_id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@id([player_id, tm, year, playoffs_s])
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model player_stats_totals {
+  player_id     Int
+  player_name   String?
+  pos           String?
+  age           BigInt?
+  tm            String
+  games         BigInt?
+  gs            BigInt?
+  mp            BigInt?
+  fg            BigInt?
+  fga           BigInt?
+  fg_percent    Float?
+  threeP        BigInt?
+  threePA       BigInt?
+  three_percent Float?
+  twoP          BigInt?
+  twoPA         BigInt?
+  two_percent   Float?
+  efg_percent   Float?
+  ft            BigInt?
+  fta           BigInt?
+  ft_percent    Float?
+  orb           BigInt?
+  drb           BigInt?
+  trb           BigInt?
+  ast           BigInt?
+  stl           BigInt?
+  blk           BigInt?
+  tov           BigInt?
+  pf            BigInt?
+  pts           BigInt?
+  year          BigInt
+  playoffs_s    String  @db.VarChar
+  player        player  @relation(fields: [player_id], references: [player_id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@id([player_id, tm, year, playoffs_s])
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model team_selection {
+  season                                     BigInt @default(autoincrement())
+  lg                                         String
+  tm                                         String
+  players                                    String
+  type                                       String
+  player_one                                 Int
+  player_two                                 Int
+  player_three                               Int
+  player_four                                Int
+  player_five                                Int
+  player_six                                 Int
+  player_team_selection_player_fiveToplayer  player @relation("team_selection_player_fiveToplayer", fields: [player_five], references: [player_id], onDelete: NoAction, onUpdate: NoAction)
+  player_team_selection_player_fourToplayer  player @relation("team_selection_player_fourToplayer", fields: [player_four], references: [player_id], onDelete: NoAction, onUpdate: NoAction)
+  player_team_selection_player_oneToplayer   player @relation("team_selection_player_oneToplayer", fields: [player_one], references: [player_id], onDelete: NoAction, onUpdate: NoAction)
+  player_team_selection_player_sixToplayer   player @relation("team_selection_player_sixToplayer", fields: [player_six], references: [player_id], onDelete: NoAction, onUpdate: NoAction)
+  player_team_selection_player_threeToplayer player @relation("team_selection_player_threeToplayer", fields: [player_three], references: [player_id], onDelete: NoAction, onUpdate: NoAction)
+  player_team_selection_player_twoToplayer   player @relation("team_selection_player_twoToplayer", fields: [player_two], references: [player_id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@id([season, tm, type])
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model teams {
+  team_id             Int                   @id @default(autoincrement())
+  franchise           String
+  abbvreviation       String                @db.VarChar
+  lg                  String
+  from                Int
+  to                  Int
+  years               Int
+  g                   BigInt
+  w                   BigInt
+  l                   BigInt
+  wl_percentage       Float
+  playoffs            BigInt
+  division            BigInt
+  conference          BigInt
+  championship        BigInt
+  championships       championships[]
+  team_forecast       team_forecast?
+  team_stats_per_game team_stats_per_game[]
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model championships {
+  team_id  Int    @default(autoincrement())
+  year     Int
+  lg       String
+  champion String
+  teams    teams  @relation(fields: [team_id], references: [team_id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@id([team_id, year])
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model team_forecast {
+  team_id            Int    @id
+  team               String
+  playoff_percentage Float
+  finals_percentage  Float
+  champ_percentage   Float
+  teams              teams  @relation(fields: [team_id], references: [team_id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model team_stats_per_game {
+  team_id           Int
+  team              String?
+  g                 BigInt?
+  mp                BigInt?
+  fg                Float?
+  fga               Float?
+  fg_percentage     Float?
+  threeP            Float?
+  threePA           Float?
+  threeP_percentage Float?
+  twoP              Float?
+  twoPA             Float?
+  twoP_percentage   Float?
+  ft                Float?
+  fta               Float?
+  ft_percentage     Float?
+  orb               Float?
+  drb               Float?
+  trb               Float?
+  ast               Float?
+  stl               Float?
+  blk               Float?
+  tov               Float?
+  pf                Float?
+  pts               Float?
+  year              Int
+  playoffs          String? @db.VarChar
+  playoffs_s        String  @db.VarChar
+  teams             teams   @relation(fields: [team_id], references: [team_id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@id([team_id, year, playoffs_s])
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model player_career_avg {
+  player_id      Int
+  games          Float?
+  gs             Float?
+  mp             Float?
+  fg             Float?
+  fg_percent     Float?
+  threePA        Float?
+  threeP_percent Float?
+  ft             Float?
+  ft_percent     Float?
+  orb            Float?
+  drb            Float?
+  trb            Float?
+  ast            Float?
+  stl            Float?
+  blk            Float?
+  tov            Float?
+  pf             Float?
+  pts            Float?
+  fga            Float?
+  threeP         Float?
+  three_percent  Float?
+  twoP           Float?
+  twoPA          Float?
+  two_percent    Float?
+  eFG_percent    Float?
+  fta            Float?
+  playoffs_s     String @db.VarChar
+  player         player @relation(fields: [player_id], references: [player_id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@id([player_id, playoffs_s])
+}

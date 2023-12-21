@@ -13,8 +13,8 @@ const config: Config = {
 
   daisyui: {
     themes: [
+      "synthwave",
       "fantasy",
-      "business",
       {
         customdark: {
           primary: "#1d4ed8",
@@ -29,7 +29,7 @@ const config: Config = {
         },
       },
     ],
-    darkTheme: "business",
+    darkTheme: "synthwave",
     base: true,
     styled: true,
     utils: true,
@@ -37,6 +37,7 @@ const config: Config = {
     logs: "true",
     themeRoot: ":root",
   },
+  darkMode: ["class", '[data-theme="synthwave"]'],
 
   plugins: [require("@tailwindcss/typography"), require("daisyui")],
 };

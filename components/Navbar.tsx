@@ -7,8 +7,8 @@ function Navbar() {
   const linkStyle =
     "text-xl hover:border-b-2 hover:border-accent leading-[2.75rem]";
 
-  const activeStyle = linkStyle + " text-dark";
-  const nonActiveStyle = linkStyle + " text-info";
+  const activeStyle = linkStyle + " text-warning";
+  const nonActiveStyle = linkStyle + " text-dark";
   const currentRoute = usePathname();
   return (
     <nav className="navbar bg-base-100 border-b-[1px] border-stone-500 p-0 min-h-[3rem]">
@@ -25,9 +25,11 @@ function Navbar() {
           <li className="grow relative text-center px-[1rem]">
             <Link
               className={
-                currentRoute === "/players" ? activeStyle : nonActiveStyle
+                currentRoute === "/players/overview"
+                  ? activeStyle
+                  : nonActiveStyle
               }
-              href="/players"
+              href="/players/overview"
             >
               PLAYERS
             </Link>
@@ -35,31 +37,13 @@ function Navbar() {
           <li className="grow relative text-center px-[1rem]">
             <Link
               className={
-                currentRoute === "/teams" ? activeStyle : nonActiveStyle
+                currentRoute === "/teams/overview"
+                  ? activeStyle
+                  : nonActiveStyle
               }
-              href="/teams"
+              href="/teams/overview"
             >
               TEAMS
-            </Link>
-          </li>
-          <li className="grow relative text-center px-[1rem]">
-            <Link
-              className={
-                currentRoute === "/stats" ? activeStyle : nonActiveStyle
-              }
-              href="/stats"
-            >
-              STATS
-            </Link>
-          </li>
-          <li className="grow relative text-center px-[1rem]">
-            <Link
-              className={
-                currentRoute === "/about" ? activeStyle : nonActiveStyle
-              }
-              href="/about"
-            >
-              ABOUT
             </Link>
           </li>
         </ul>

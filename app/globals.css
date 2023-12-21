@@ -2,20 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  height:100%;
+}
+
+body {
+  min-height: 100%;
+}
+
+
 .container {
   margin:0 auto;
-  max-width: 55rem;
-  padding: 0 2rem;
+  max-width: 65rem;
+  padding: 0;
   position: relative;
   width: 100%;
 }
 
 .container-main {
   min-height: 33rem;
+  box-shadow: 0 9px 0px 0px transparent, 0 -9px 0px 0px transparent, 12px 0 15px -4px rgba(12, 15, 19, 0.2), -12px 0 15px -4px rgba(12, 15, 19, 0.2);
 }
 
 .container-navbar {
-  padding: 0;
   height: 44px;
 }
 
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 5px;
+  min-height: 200px;
+  width: 100%;
+  position: relative;
+}
+
+.paginationBttns {
+  position: absolute;
+  bottom: 50px;
+
+}
