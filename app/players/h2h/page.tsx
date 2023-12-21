@@ -56,12 +56,11 @@ const nba_seasons_from_1979_to_2023 = {
   "2022-23": 2023,
 };
 
-const nba_keys = Object.keys(nba_seasons_from_1979_to_2023);
-export const nba_to_years = Object.values(nba_seasons_from_1979_to_2023);
-
 function H2HPlayerPage() {
   const apiUrl = "/api/players";
   const { data: players, error, isLoading } = useSWR(apiUrl, fetcher);
+  const nba_keys = Object.keys(nba_seasons_from_1979_to_2023);
+  const nba_to_years = Object.values(nba_seasons_from_1979_to_2023);
 
   const [player1, setPlayer1] = useState<player>();
   const [player2, setPlayer2] = useState<player>();
