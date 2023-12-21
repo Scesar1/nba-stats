@@ -14,53 +14,111 @@ import React, { useMemo, useState } from "react";
 import Pagination from "./Pagination";
 import CellLink from "./CellLink";
 import moment from "moment";
-import { player } from "@prisma/client";
+import { player_stats_per_game } from "@prisma/client";
 
 type propTypes = {
-  playerData: Record<string, any>[];
+  careerData: Record<string, any>[];
+  name: boolean;
 };
 
-
-const PlayerTable = (props: propTypes) => {
-  const columnHelper = createColumnHelper<player>();
-  const userColumnDefs = useMemo<ColumnDef<player, any>[]>(() => {
+export default function CareerTable(props: propTypes) {
+  const columnHelper = createColumnHelper<player_stats_per_game>();
+  const userColumnDefs = useMemo<
+    ColumnDef<player_stats_per_game, any>[]
+  >(() => {
     return [
-      columnHelper.accessor("player_name", {
-        header: "Name",
+      columnHelper.accessor("pos", {
+        header: "Position",
         cell: (props) => (
           <CellLink getValue={props.getValue()} row={props.row} />
         ),
       }),
-      columnHelper.accessor("from", {
-        header: "From",
+      columnHelper.accessor("age", {
+        header: "Age",
       }),
-      columnHelper.accessor("to", {
-        header: "To",
+      columnHelper.accessor("year", {
+        header: "Year",
       }),
-      columnHelper.accessor("pos", {
-        header: "Position",
+      columnHelper.accessor("tm", {
+        header: "Team",
       }),
-      columnHelper.accessor("ht", {
-        header: "Height (in.)",
+      columnHelper.accessor("games", {
+        header: "G",
       }),
-      columnHelper.accessor("wt", {
-        header: "Weight (lbs)",
+      columnHelper.accessor("gs", {
+        header: "GS",
       }),
-      columnHelper.accessor("birth_date", {
-        header: "Birth Date",
-        cell: (props) => (
-          <span>{moment(props.getValue()).format("MM/DD/yyyy")}</span>
-        ),
+      columnHelper.accessor("mp", {
+        header: "MP",
       }),
-      columnHelper.accessor("colleges", {
-        header: "Colleges",
+      columnHelper.accessor("pts", {
+        header: "PPG",
+      }),
+      columnHelper.accessor("trb", {
+        header: "TRB",
+      }),
+      columnHelper.accessor("ast", {
+        header: "AST",
+      }),
+      columnHelper.accessor("stl", {
+        header: "STL",
+      }),
+      columnHelper.accessor("blk", {
+        header: "BLK",
+      }),
+      columnHelper.accessor("orb", {
+        header: "ORB",
+      }),
+      columnHelper.accessor("drb", {
+        header: "DRB",
+      }),
+      columnHelper.accessor("fg", {
+        header: "FG",
+      }),
+      columnHelper.accessor("fga", {
+        header: "FGA",
+      }),
+      columnHelper.accessor("fg_percent", {
+        header: "FG%",
+      }),
+      columnHelper.accessor("threeP", {
+        header: "3P",
+      }),
+      columnHelper.accessor("threePA", {
+        header: "3PA",
+      }),
+      columnHelper.accessor("three_percent", {
+        header: "3P%",
+      }),
+      columnHelper.accessor("twoP", {
+        header: "2P",
+      }),
+      columnHelper.accessor("two_percent", {
+        header: "2P%",
+      }),
+      columnHelper.accessor("ft", {
+        header: "FT",
+      }),
+      columnHelper.accessor("fta", {
+        header: "FTA",
+      }),
+      columnHelper.accessor("ft_percent", {
+        header: "FT%",
+      }),
+
+      columnHelper.accessor("tov", {
+        header: "TOV",
+      }),
+      columnHelper.accessor("pf", {
+        header: "PF",
       }),
     ];
   }, [columnHelper]);
-
-  const { playerData } = props;
+  const { careerData, name } = props;
   const [sorting, setSorting] = useState<SortingState>([]);
-  const [data, setData] = useState(() => [...(playerData as player[])]);
+  const [data, setData] = useState(() => [
+    ...(careerData as player_stats_per_game[]),
+  ]);
   const table = useReactTable({
     columns: userColumnDefs,
     data,
@@ -74,7 +132,6 @@ const PlayerTable = (props: propTypes) => {
   });
   const headers = table.getFlatHeaders();
   const rows = table.getRowModel().rows;
-
   return (
     <div className="max-h-[850px] overflow-y-auto">
       <table className="table table-zebra my-4 w-full">
@@ -118,9 +175,6 @@ const PlayerTable = (props: propTypes) => {
           ))}
         </tbody>
       </table>
-        <Pagination table={table} />
     </div>
   );
-};
-
-export default PlayerTable;
+}

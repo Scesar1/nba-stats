@@ -3,8 +3,10 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: "https",
         hostname: "ak-static.cms.nba.com",
+      },
+      {
+        hostname: "cdn.nba.com",
       },
     ],
   },

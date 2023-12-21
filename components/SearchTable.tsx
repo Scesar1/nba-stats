@@ -23,8 +23,6 @@ function SearchTable() {
   if (error) return <div>failed to load</div>;
 
   function handleOnSubmit(event: FormEvent<HTMLFormElement>): void {
-    event.preventDefault();
-    console.log(search);
     setQuery(search);
   }
 

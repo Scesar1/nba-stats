@@ -7,24 +7,20 @@ export async function GET(req: NextRequest) {
   let players;
   try {
     if (query) {
-      players = await prisma.player.findMany({
-        where: {
-          OR: [
-            { name: { contains: query, mode: "insensitive" } },
-            { from: { equals: parseInt(query) } },
-            { to: { equals: parseInt(query) } },
-            { pos: { contains: query, mode: "insensitive" } },
-            { ht: { equals: parseInt(query) } },
-            { wt: { equals: parseInt(query) } },
-            { colleges: { contains: query, mode: "insensitive" } },
-          ],
-        },
-      });
+      players = await prisma.$queryRaw`SELECT * 
+        FROM player 
+        WHERE player_name ILIKE CONCAT('%', ${query}, '%') 
+          OR pos ILIKE CONCAT('%', ${query}, '%')  
+          OR colleges ILIKE CONCAT('%', ${query}, '%')  
+          OR "from" = ${parseInt(query)} 
+          OR "to" = ${parseInt(query)} 
+          OR ht = ${parseInt(query)} 
+          OR wt = ${parseInt(query)}`;
     } else {
-      players = await prisma.player.findMany();
+      players = await prisma.$queryRaw`SELECT * FROM player`;
     }
     return NextResponse.json(players);
-  } catch (error: any) {
-    return new Response("Invalid request", { status: 400 });
+  } catch (error: unknown) {
+    return new Response(error as string, { status: 400 });
   }
 }

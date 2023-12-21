@@ -46,26 +46,6 @@ function Navbar() {
               TEAMS
             </Link>
           </li>
-          <li className="grow relative text-center px-[1rem]">
-            <Link
-              className={
-                currentRoute === "/stats" ? activeStyle : nonActiveStyle
-              }
-              href="/stats"
-            >
-              STATS
-            </Link>
-          </li>
-          <li className="grow relative text-center px-[1rem]">
-            <Link
-              className={
-                currentRoute === "/about" ? activeStyle : nonActiveStyle
-              }
-              href="/about"
-            >
-              ABOUT
-            </Link>
-          </li>
         </ul>
       </section>
     </nav>

@@ -1,12 +1,20 @@
 import React from "react";
-import { teams } from "@/lib/teams";
+import { teamsLogos } from "@/lib/teamsLogo";
 import Image from "next/image";
 import PredictionDashboard from "@/components/PredictionDashboard";
+import { prisma } from "@/lib/db/prisma";
+import { team_forecast, teams } from "@prisma/client";
 
-function TeamPage({ params }: { params: { name: string } }) {
+async function TeamPage({ params }: { params: { name: string } }) {
   const { name } = params;
   const formattedName = name.replaceAll("-", " ");
-  const logo = teams.find((team) => team.name === formattedName)!.logo;
+  const logo = teamsLogos.find((team) => team.name === formattedName)!.logo;
+  const teamObj: teams[] =
+    await prisma.$queryRaw`Select * from teams where franchise ILIKE ${formattedName}`;
+  const team: teams = teamObj[0];
+
+  const prediction: team_forecast[] =
+    await prisma.$queryRaw`SELECT * FROM team_forecast WHERE team_id=${team.team_id}`;
   return (
     <div className="mt-3 grid md:grid-cols-4 grid-cols-1 justify-items-center">
       <div className="card col-span-4 rounded-lg bg-[#fcf1ce] w-[95%] p-4 h-full shadow-xl">
@@ -21,23 +29,23 @@ function TeamPage({ params }: { params: { name: string } }) {
         <div className="stats stats-vertical shadow">
           <div className="stat">
             <div className="stat-title">Games Played</div>
-            <div className="stat-value">5,878</div>
-            <div className="stat-desc">Since 1949-50</div>
+            <div className="stat-value">{team.g.toString()}</div>
+            <div className="stat-desc">Since {team.from}</div>
           </div>
 
           <div className="stat">
             <div className="stat-title">Games Won</div>
-            <div className="stat-value">2,900</div>
+            <div className="stat-value">{team.w.toString()}</div>
           </div>
 
           <div className="stat">
             <div className="stat-title">Games Lost</div>
-            <div className="stat-value">2,978</div>
+            <div className="stat-value">{team.l.toString()}</div>
             <div className="stat-desc"></div>
           </div>
           <div className="stat">
             <div className="stat-title">Win/Loss %</div>
-            <div className="stat-value">0.493</div>
+            <div className="stat-value">{team.wl_percentage.toString()}</div>
           </div>
         </div>
       </div>
@@ -46,22 +54,24 @@ function TeamPage({ params }: { params: { name: string } }) {
         <div className="stats stats-vertical shadow">
           <div className="stat">
             <div className="stat-title">Years In Playoffs</div>
-            <div className="stat-value">49</div>
-            <div className="stat-desc">Out of 75 years</div>
+            <div className="stat-value">{team.playoffs.toString()}</div>
+            <div className="stat-desc">
+              Out of {team.years.toString()} years
+            </div>
           </div>
 
           <div className="stat">
             <div className="stat-title">First in Division</div>
-            <div className="stat-value">12 times</div>
+            <div className="stat-value">{team.division.toString()}</div>
           </div>
 
           <div className="stat">
             <div className="stat-title">Conference Championships</div>
-            <div className="stat-value">0</div>
+            <div className="stat-value">{team.conference.toString()}</div>
           </div>
           <div className="stat">
             <div className="stat-title">League Championships</div>
-            <div className="stat-value">1</div>
+            <div className="stat-value">{team.championship.toString()}</div>
           </div>
         </div>
       </div>
@@ -71,17 +81,17 @@ function TeamPage({ params }: { params: { name: string } }) {
             <div className="stats shadow w-fit">
               <div className="stat place-items-center">
                 <div className="stat-title">Active From</div>
-                <div className="stat-value text-secondary">1949-50</div>
+                <div className="stat-value text-secondary">{team.from}</div>
               </div>
               <div className="stat place-items-center">
                 <div className="stat-title">To</div>
-                <div className="stat-value text-accent">2023-24</div>
+                <div className="stat-value text-accent">{team.to}</div>
                 <div className="stat-desc"></div>
               </div>
             </div>
           </div>
           <div className="justify-center">
-            <PredictionDashboard />
+            <PredictionDashboard prediction={prediction[0]} />
           </div>
         </div>
       </div>

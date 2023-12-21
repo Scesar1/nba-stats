@@ -28,19 +28,19 @@ function SubNavbarPlayer() {
         <li className="grow relative text-center">
           <Link
             className={
-              currentRoute === "/players/"
-                ? activeStyle
-                : nonActiveStyle
+              currentRoute === "/players/stats" ? activeStyle : nonActiveStyle
             }
-            href="/overview"
+            href="/players/stats"
           >
             PLAYER STATS
           </Link>
         </li>
         <li className="grow relative text-center">
           <Link
-            className={currentRoute === "/teams" ? activeStyle : nonActiveStyle}
-            href="/teams"
+            className={
+              currentRoute === "/players/h2h" ? activeStyle : nonActiveStyle
+            }
+            href="/players/h2h"
           >
             H2H
           </Link>
