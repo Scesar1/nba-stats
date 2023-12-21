@@ -1,0 +1,31 @@
+team_id,team,playoff_percentage,finals_percentage,champ_percentage
+1610612738,Boston Celtics,97.8,40.1,24.8
+1610612743,Denver Nuggets,96.9,33.7,18.9
+1610612755,Philadelphia 76ers,97.2,18.1,10.0
+1610612749,Milwaukee Bucks,96.7,19.2,9.3
+1610612756,Phoenix Suns,81.8,13.9,6.6
+1610612747,Los Angeles Lakers,83.0,9.0,3.9
+1610612750,Minnesota Timberwolves,95.2,9.8,3.8
+1610612739,Cleveland Cavaliers,91.5,6.7,3.2
+1610612752,New York Knicks,82.3,4.9,2.4
+1610612744,Golden State Warriors,65.5,5.4,2.3
+1610612748,Miami Heat,81.9,4.7,2.3
+1610612746,Los Angeles Clippers,72.1,5.6,2.1
+1610612760,Oklahoma City Thunder,85.6,6.7,1.9
+1610612758,Sacramento Kings,73.8,5.0,1.9
+1610612742,Dallas Mavericks,61.7,4.8,1.8
+1610612740,New Orleans Pelicans,60.8,4.5,1.4
+1610612751,Brooklyn Nets,59.8,1.5,0.7
+1610612754,Indiana Pacers,44.2,1.1,0.5
+1610612737,Atlanta Hawks,34.7,1.1,0.5
+1610612763,Memphis Grizzlies,3.8,0.4,0.3
+1610612745,Houston Rockets,16.4,0.8,0.3
+1610612753,Orlando Magic,70.5,1.4,0.3
+1610612741,Chicago Bulls,17.5,0.5,0.3
+1610612761,Toronto Raptors,21.9,0.5,0.2
+1610612762,Utah Jazz,2.3,0.2,0.1
+1610612766,Charlotte Hornets,3.0,0.1,0.0
+1610612764,Washington Wizards,0.5,0.1,0.0
+1610612765,Detroit Pistons,0.5,0.1,0.0
+1610612757,Portland Trail Blazers,0.5,0.1,0.0
+1610612759,San Antonio Spurs,0.5,0.1,0.0
