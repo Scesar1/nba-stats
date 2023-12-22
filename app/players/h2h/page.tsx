@@ -1,5 +1,6 @@
 "use client";
 import AutoCompleteInput from "@/components/AutoCompleteInput";
+import H2HTable from "@/components/H2HTable";
 import PlayerImage from "@/components/PlayerImage";
 import { player, player_stats_per_game } from "@prisma/client";
 import { FormEvent, useEffect, useState } from "react";
@@ -192,69 +193,7 @@ function H2HPlayerPage() {
                 <div className="grid h-20 card bg-base-500 rounded-box place-items-center">
                   <h1 className="text-2xl font-extrabold">Overall Stats</h1>
                 </div>
-                <table className="table border text-lg">
-                  {/* head */}
-                  <thead className="border">
-                    <tr className="border">
-                      <th></th>
-                      <th>{playerStats[0]?.player_name}</th>
-                      <th className=""></th>
-                      <th>{playerStats[1]?.player_name}</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {/* row 2 */}
-                    <tr className="hover">
-                      <th>PPG</th>
-                      <td>{playerStats[0].pts?.toString()}</td>
-                      <td></td>
-                      <td>{playerStats[1].pts?.toString()}</td>
-                    </tr>
-                    {/* row 3 */}
-                    <tr className="hover">
-                      <th>TRB/G</th>
-                      <td>{playerStats[0].trb?.toString()}</td>
-                      <td></td>
-                      <td>{playerStats[1].trb?.toString()}</td>
-                    </tr>
-                    <tr className="hover">
-                      <th>AST/G</th>
-                      <td>{playerStats[0].ast?.toString()}</td>
-                      <td></td>
-                      <td>{playerStats[1].ast?.toString()}</td>
-                    </tr>
-                    <tr className="hover">
-                      <th>STL/G</th>
-                      <td>{playerStats[0].stl?.toString()}</td>
-                      <td></td>
-                      <td>{playerStats[1].stl?.toString()}</td>
-                    </tr>
-                    <tr className="hover">
-                      <th>BLK/G</th>
-                      <td>{playerStats[0].blk?.toString()}</td>
-                      <td></td>
-                      <td>{playerStats[1].blk?.toString()}</td>
-                    </tr>
-                    <tr className="hover">
-                      <th>FG%</th>
-                      <td>{playerStats[0].fg_percent?.toString()}</td>
-                      <td></td>
-                      <td>{playerStats[1].fg_percent?.toString()}</td>
-                    </tr>
-                    <tr className="hover">
-                      <th>3P%</th>
-                      <td>{playerStats[0].three_percent?.toString()}</td>
-                      <td></td>
-                      <td>{playerStats[1].three_percent?.toString()}</td>
-                    </tr>
-                    <tr className="hover">
-                      <th>FT%</th>
-                      <td>{playerStats[0].ft_percent?.toString()}</td>
-                      <td></td>
-                      <td>{playerStats[1].ft_percent?.toString()}</td>
-                    </tr>
-                  </tbody>
-                </table>
+                <H2HTable playerStats={playerStats} />
               </div>
             </div>
           ) : (playerStats &&

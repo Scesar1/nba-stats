@@ -21,7 +21,7 @@ type propTypes = {
   name: boolean;
 };
 
-export default function CareerTable(props: propTypes) {
+export default function CareerTablePoss(props: propTypes) {
   const columnHelper = createColumnHelper<player_stats_per_poss>();
   const userColumnDefs = useMemo<
     ColumnDef<player_stats_per_poss, any>[]
@@ -132,6 +132,7 @@ export default function CareerTable(props: propTypes) {
     data,
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
+    getPaginationRowModel: getPaginationRowModel(),
     state: {
       sorting,
     },
@@ -184,6 +185,7 @@ export default function CareerTable(props: propTypes) {
           </tbody>
         </table>
       </div>
+      {!name && <Pagination table={table} />}
     </div>
   );
 }

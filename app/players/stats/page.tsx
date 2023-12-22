@@ -1,6 +1,13 @@
 "use client";
 import SeasonTable from "@/components/SeasonTable";
-import { player_stats_per_game } from "@prisma/client";
+import SeasonTableAdv from "@/components/SeasonTableAdv";
+import SeasonTablePoss from "@/components/SeasonTablePoss";
+import {
+  player_stats_advanced,
+  player_stats_per_game,
+  player_stats_per_poss,
+  player_stats_totals,
+} from "@prisma/client";
 import React, { FormEvent, useEffect, useState } from "react";
 import useSWR from "swr";
 
@@ -58,27 +65,55 @@ function PlayerStatPage() {
   const [selectedYear, setSelectedYear] = useState(
     nba_to_years[nba_to_years.length - 1]
   );
-  const [playerData, setPlayerData] = useState<player_stats_per_game[]>([]);
+  const [playerData, setPlayerData] = useState<
+    | player_stats_per_game[]
+    | player_stats_advanced[]
+    | player_stats_per_poss[]
+    | player_stats_totals[]
+  >([]);
   const [isLoading, setIsLoading] = useState(true);
   const [playoffs, setPlayoffs] = useState(false);
-  /* const {
-    data: playerData,
-    error,
-    isLoading,
-  } = useSWR(
-    `/api/players/stats?year=${selectedYear}&playoffs=${playoffs}`,
-    fetcher
-  ); */
+  const [statType, setStatType] = useState("basic");
 
   useEffect(() => {
     setIsLoading(true);
-    fetch(`/api/players/stats?year=${selectedYear}&playoffs=${playoffs}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setPlayerData(data);
-        setIsLoading(false);
-      });
-  }, [selectedYear, playoffs]);
+    if (statType === "basic") {
+      fetch(`/api/players/stats?year=${selectedYear}&playoffs=${playoffs}`)
+        .then((res) => res.json())
+        .then((data) => {
+          setPlayerData(data);
+          setIsLoading(false);
+        });
+    } else if (statType === "advanced") {
+      fetch(
+        `/api/players/stats/advanced?year=${selectedYear}&playoffs=${playoffs}`
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          setPlayerData(data);
+          setIsLoading(false);
+        });
+    } else if (statType === "per_poss") {
+      fetch(
+        `/api/players/stats/per_poss?year=${selectedYear}&playoffs=${playoffs}`
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          setPlayerData(data);
+          setIsLoading(false);
+        });
+    } else if (statType === "totals") {
+      fetch(
+        `/api/players/stats/totals?year=${selectedYear}&playoffs=${playoffs}`
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          setPlayerData(data);
+          setIsLoading(false);
+        });
+    }
+  }, [selectedYear, playoffs, statType]);
+
   if (isLoading)
     return (
       <div className="flex justify-center items-center">
@@ -111,6 +146,19 @@ function PlayerStatPage() {
             );
           })}
         </select>
+        <select
+          className="select select-bordered mx-2"
+          defaultValue={statType}
+          onChange={(e) => setStatType(e.target.value)}
+        >
+          <option disabled value="">
+            Pick one
+          </option>
+          <option value="basic">Basic</option>
+          <option value="advanced">Advanced</option>
+          <option value="per_poss">Per 100 Possessions</option>
+          <option value="totals">Total</option>
+        </select>
         <button
           className={`btn btn-sm mx-2 ${
             playoffs ? "btn-error" : "btn-primary"
@@ -119,11 +167,18 @@ function PlayerStatPage() {
             setPlayoffs(!playoffs);
           }}
         >
-          Playoff Stats
+          {!playoffs ? `Playoffs Stats` : `Regular Season Stats`}
         </button>
       </div>
       <div className="px-10">
-        <SeasonTable careerData={playerData} name={false} />
+        {
+          {
+            basic: <SeasonTable careerData={playerData} name={false} />,
+            advanced: <SeasonTableAdv careerData={playerData} name={false} />,
+            per_poss: <SeasonTablePoss careerData={playerData} name={false} />,
+            totals: <SeasonTable careerData={playerData} name={false} />,
+          }[statType]
+        }
       </div>
     </div>
   );

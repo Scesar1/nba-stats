@@ -21,12 +21,18 @@ type propTypes = {
   name: boolean;
 };
 
-export default function CareerTableAdv(props: propTypes) {
+export default function SeasonTableAdv(props: propTypes) {
   const columnHelper = createColumnHelper<player_stats_advanced>();
   const userColumnDefs = useMemo<
     ColumnDef<player_stats_advanced, any>[]
   >(() => {
     return [
+      columnHelper.accessor("player_name", {
+        header: "Name",
+        cell: (props) => (
+          <CellLink getValue={props.getValue()} row={props.row} />
+        ),
+      }),
       columnHelper.accessor("pos", {
         header: "Position",
       }),

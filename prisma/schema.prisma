@@ -36,16 +36,16 @@ model player {
 model individual_awards {
   player_name  String?
   lg           String?
-  mvp_count    BigInt?
+  mvp_count    Int?
   mvp_seasons  String?
   roy_season   String?
-  dpoy_count   BigInt?
+  dpoy_count   Int?
   dpoy_seasons String?
-  mip_count    BigInt?
+  mip_count    Int?
   mip_seasons  String?
-  smoy_count   BigInt?
+  smoy_count   Int?
   smoy_seasons String?
-  fmvp_count   BigInt?
+  fmvp_count   Int?
   fmvp_seasons String?
   player_id    Int     @id
   player       player  @relation(fields: [player_id], references: [player_id], onDelete: NoAction, onUpdate: NoAction)
@@ -56,10 +56,10 @@ model player_stats_advanced {
   player_id   Int
   player_name String?
   pos         String?
-  age         BigInt?
+  age         Int?
   tm          String
-  g           BigInt?
-  mp          BigInt?
+  g           Int?
+  mp          Int?
   per         Decimal? @db.Decimal(10, 3)
   ts_percent  Decimal? @db.Decimal(10, 3)
   par         Decimal? @db.Decimal(10, 3)
@@ -131,11 +131,11 @@ model player_stats_per_poss {
   player_id     Int
   player_name   String?
   pos           String?
-  age           BigInt?
+  age           Int?
   tm            String
-  games         BigInt?
-  gs            BigInt?
-  mp            BigInt?
+  games         Int?
+  gs            Int?
+  mp            Int?
   fg            Decimal? @db.Decimal(10, 3)
   fga           Decimal? @db.Decimal(10, 3)
   fg_percent    Decimal? @db.Decimal(10, 3)
@@ -157,8 +157,8 @@ model player_stats_per_poss {
   tov           Decimal? @db.Decimal(10, 3)
   pf            Decimal? @db.Decimal(10, 3)
   pts           Decimal? @db.Decimal(10, 3)
-  ortg          BigInt?
-  drtg          BigInt?
+  ortg          Int?
+  drtg          Int?
   year          Int
   playoffs_s    String   @db.VarChar
   player        player   @relation(fields: [player_id], references: [player_id], onDelete: Cascade, onUpdate: NoAction)
@@ -171,34 +171,34 @@ model player_stats_totals {
   player_id     Int
   player_name   String?
   pos           String?
-  age           BigInt?
+  age           Int?
   tm            String
-  games         BigInt?
-  gs            BigInt?
-  mp            BigInt?
-  fg            BigInt?
-  fga           BigInt?
+  games         Int?
+  gs            Int?
+  mp            Int?
+  fg            Int?
+  fga           Int?
   fg_percent    Decimal? @db.Decimal(10, 3)
-  threeP        BigInt?
-  threePA       BigInt?
+  threeP        Int?
+  threePA       Int?
   three_percent Decimal? @db.Decimal(10, 3)
-  twoP          BigInt?
-  twoPA         BigInt?
+  twoP          Int?
+  twoPA         Int?
   two_percent   Decimal? @db.Decimal(10, 3)
   efg_percent   Decimal? @db.Decimal(10, 3)
-  ft            BigInt?
-  fta           BigInt?
+  ft            Int?
+  fta           Int?
   ft_percent    Decimal? @db.Decimal(10, 3)
-  orb           BigInt?
-  drb           BigInt?
-  trb           BigInt?
-  ast           BigInt?
-  stl           BigInt?
-  blk           BigInt?
-  tov           BigInt?
-  pf            BigInt?
-  pts           BigInt?
-  year          BigInt
+  orb           Int?
+  drb           Int?
+  trb           Int?
+  ast           Int?
+  stl           Int?
+  blk           Int?
+  tov           Int?
+  pf            Int?
+  pts           Int?
+  year          Int
   playoffs_s    String   @db.VarChar
   player        player   @relation(fields: [player_id], references: [player_id], onDelete: Cascade, onUpdate: NoAction)
 
@@ -237,14 +237,14 @@ model teams {
   from                Int
   to                  Int
   years               Int
-  g                   BigInt
-  w                   BigInt
-  l                   BigInt
+  g                   Int
+  w                   Int
+  l                   Int
   wl_percentage       Decimal               @db.Decimal(10, 3)
-  playoffs            BigInt
-  division            BigInt
-  conference          BigInt
-  championship        BigInt
+  playoffs            Int
+  division            Int
+  conference          Int
+  championship        Int
   championships       championships[]
   team_forecast       team_forecast?
   team_stats_per_game team_stats_per_game[]
@@ -275,8 +275,8 @@ model team_forecast {
 model team_stats_per_game {
   team_id           Int
   team              String?
-  g                 BigInt?
-  mp                BigInt?
+  g                 Int?
+  mp                Int?
   fg                Decimal? @db.Decimal(10, 3)
   fga               Decimal? @db.Decimal(10, 3)
   fg_percentage     Decimal? @db.Decimal(10, 3)
