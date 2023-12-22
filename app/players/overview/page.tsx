@@ -4,7 +4,7 @@ import SearchTable from "@/components/SearchTable";
 export default function PlayerOverview() {
   return (
     <div className="mt-10 h-screen">
-      <div className="overflow-x-auto">
+      <div className="no-scrollbar overflow-auto">
         <SearchTable />
       </div>
     </div>

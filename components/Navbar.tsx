@@ -13,7 +13,7 @@ function Navbar() {
   return (
     <nav className="navbar bg-base-100 border-b-[1px] border-stone-500 p-0 min-h-[3rem]">
       <section className="container container-navbar">
-        <ul className="flex w-[100%] overflow-x-scroll">
+        <ul className="flex w-[100%] sm:overflow-x-scroll">
           <li className="grow relative text-center px-[1rem]">
             <Link
               className={currentRoute === "/" ? activeStyle : nonActiveStyle}

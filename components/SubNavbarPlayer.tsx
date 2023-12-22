@@ -12,7 +12,7 @@ function SubNavbarPlayer() {
   const currentRoute = usePathname();
   return (
     <nav className="navbar bg-base-100 border-b-[1px] rounded border-stone-500 p-0 min-h-[1rem] w-[65rem] shadow-md">
-      <ul className="flex w-[100%] overflow-x-scroll">
+      <ul className="flex w-[100%] no-scrollbar sm:overflow-x-scroll">
         <li className="grow relative text-center">
           <Link
             className={

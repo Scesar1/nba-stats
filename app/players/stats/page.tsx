@@ -1,5 +1,6 @@
 "use client";
 import SeasonTable from "@/components/SeasonTable";
+import { player_stats_per_game } from "@prisma/client";
 import React, { FormEvent, useEffect, useState } from "react";
 import useSWR from "swr";
 
@@ -57,17 +58,27 @@ function PlayerStatPage() {
   const [selectedYear, setSelectedYear] = useState(
     nba_to_years[nba_to_years.length - 1]
   );
-
+  const [playerData, setPlayerData] = useState<player_stats_per_game[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [playoffs, setPlayoffs] = useState(false);
-  const {
+  /* const {
     data: playerData,
     error,
     isLoading,
-    mutate,
   } = useSWR(
     `/api/players/stats?year=${selectedYear}&playoffs=${playoffs}`,
     fetcher
-  );
+  ); */
+
+  useEffect(() => {
+    setIsLoading(true);
+    fetch(`/api/players/stats?year=${selectedYear}&playoffs=${playoffs}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setPlayerData(data);
+        setIsLoading(false);
+      });
+  }, [selectedYear, playoffs]);
   if (isLoading)
     return (
       <div className="flex justify-center items-center">
@@ -77,24 +88,43 @@ function PlayerStatPage() {
 
   return (
     <div className="container container-main h-screen">
-      <select
-        className="select select-bordered"
-        defaultValue={selectedYear}
-        onChange={(e) => setSelectedYear(parseInt(e.target.value))}
-      >
-        <option disabled value="">
-          Pick one
-        </option>
-        {nba_to_years.map((year, i) => {
-          return (
-            <option key={i} value={year}>
-              {year}
-            </option>
-          );
-        })}
-      </select>
-
-      <SeasonTable careerData={playerData} name={false} />
+      <div className="flex flex-col justify-center items-center mt-10">
+        <h1 className="text-2xl font-extrabold">
+          Season Stats {playoffs ? "(Playoffs)" : "(Regular Season)"}
+        </h1>
+      </div>
+      <div className="flex flex-row justify-center items-center mt-10">
+        <h2>Select Year: </h2>
+        <select
+          className="select select-bordered mx-2"
+          defaultValue={selectedYear}
+          onChange={(e) => setSelectedYear(parseInt(e.target.value))}
+        >
+          <option disabled value="">
+            Pick one
+          </option>
+          {nba_to_years.map((year, i) => {
+            return (
+              <option key={i} value={year}>
+                {year}
+              </option>
+            );
+          })}
+        </select>
+        <button
+          className={`btn btn-sm mx-2 ${
+            playoffs ? "btn-error" : "btn-primary"
+          }`}
+          onClick={() => {
+            setPlayoffs(!playoffs);
+          }}
+        >
+          Playoff Stats
+        </button>
+      </div>
+      <div className="px-10">
+        <SeasonTable careerData={playerData} name={false} />
+      </div>
     </div>
   );
 }

@@ -68,36 +68,41 @@ async function playerPage({ params }: { params: { id: number } }) {
   }
 
   return (
-    <div className="max-h-[850px] container overflow-y-auto">
-      <div className="flex flex-row">
-        <div className="card my-20 ml-4 rounded-lg bg-[#fcf1ce] p-1 w-fit h-fit shadow-xl">
-          <div className="card-body bg-base-100 flex flex-col items-center p-4">
-            <PlayerImage
-              width={200}
-              height={200}
-              src={`https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/${intId}.png`}
-              fallbackSrc="https://cdn.nba.com/headshots/nba/latest/1040x760/fallback.png"
-              name={player.player_name}
+    <div>
+      <div className="max-h-[850px] container no-scrollbar overflow-y-scroll overflow-x-hidden">
+        <div className="flex flex-row">
+          <div className="card my-20 ml-4 rounded-lg bg-[#fcf1ce] p-1 w-fit h-fit shadow-xl">
+            <div className="card-body bg-base-100 flex flex-col items-center p-4">
+              <PlayerImage
+                width={200}
+                height={200}
+                src={`https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/${intId}.png`}
+                fallbackSrc="https://cdn.nba.com/headshots/nba/latest/1040x760/fallback.png"
+                name={player.player_name}
+              />
+            </div>
+          </div>
+          <BioCard player={player} />
+          <div className="w-fit mx-10 my-20">
+            <AwardCard
+              awards={awards}
+              teamCount={countTeamAwards(teamAwards)}
             />
           </div>
         </div>
-        <BioCard player={player} />
-        <div className="w-fit mx-10 my-20">
-          <AwardCard awards={awards} teamCount={countTeamAwards(teamAwards)} />
-        </div>
-      </div>
-      <div className="mx-6 mt-[-3rem] mb-14">
-        <h1 className="text-3xl">Career Averages (Regular Season)</h1>
+        <div className="mx-6 mt-[-3rem] mb-14">
+          <h1 className="text-3xl">Career Averages (Regular Season)</h1>
 
-        <CareerAverages careerAverages={careerAveragesData} />
-      </div>
-      <div className="mx-6">
-        <h1 className="text-3xl">Basic Stats (Regular Season)</h1>
-        <CareerTable careerData={careerDataBasic} name={false} />
-      </div>
-      <div className="mx-6 my-20">
-        <h1 className="text-3xl">Basic Stats (Playoffs)</h1>
-        <CareerTable careerData={careerDataBasicPlayoffs} name={false}/>
+          <CareerAverages careerAverages={careerAveragesData} />
+        </div>
+        <div className="mx-6">
+          <h1 className="text-3xl">Basic Stats (Regular Season)</h1>
+          <CareerTable careerData={careerDataBasic} name={false} />
+        </div>
+        <div className="mx-6 my-20">
+          <h1 className="text-3xl">Basic Stats (Playoffs)</h1>
+          <CareerTable careerData={careerDataBasicPlayoffs} name={false} />
+        </div>
       </div>
     </div>
   );
