@@ -32,8 +32,8 @@ export default function RootLayout({
           {children}
           <ToastContainer limit={1} autoClose={1000} />
         </div>
-        <Footer />
       </body>
+      <Footer />
     </html>
   );
 }

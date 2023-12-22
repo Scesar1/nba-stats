@@ -1,8 +1,8 @@
 "use client";
 import AutoCompleteInput from "@/components/AutoCompleteInput";
 import PlayerImage from "@/components/PlayerImage";
-import { player } from "@prisma/client";
-import { FormEvent, useState } from "react";
+import { player, player_stats_per_game } from "@prisma/client";
+import { FormEvent, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -64,6 +64,7 @@ function H2HPlayerPage() {
 
   const [player1, setPlayer1] = useState<player>();
   const [player2, setPlayer2] = useState<player>();
+  const [playerStats, setPlayerStats] = useState<player_stats_per_game[]>([]);
   const [criteria, setCriteria] = useState({
     playoffs: false,
     criteriaType: "career",
@@ -72,13 +73,26 @@ function H2HPlayerPage() {
     from: 0,
     to: 0,
   });
+  const [submitStatus, setSubmitStatus] = useState(false);
   const url = `${apiUrl}/h2h?p1id=${player1?.player_id}&p2id=${player2?.player_id}&playoffs=${criteria.playoffs}&type=${criteria.criteriaType}&seasonP1=${criteria.seasonP1}&seasonP2=${criteria.seasonP2}&from=${criteria.from}&to=${criteria.to}`;
-  const shouldFetch = player1 && player2;
-  const {
+
+  /* const {
     data: playerStats,
     error: error2,
     isLoading: isLoading2,
-  } = useSWR(() => (shouldFetch ? url : null), fetcher);
+  } = useSWR(() => (shouldFetch ? url : null), fetcher); */
+
+  useEffect(() => {
+    const shouldFetch = player1 && player2 && submitStatus;
+    if (shouldFetch) {
+      fetch(url)
+        .then((response) => response.json())
+        .then((data) => {
+          setPlayerStats(data);
+          setSubmitStatus(false);
+        });
+    }
+  }, [player1, player2, submitStatus]);
 
   const notify = () => {
     toast.success("Criteria Applied!", {
@@ -86,17 +100,29 @@ function H2HPlayerPage() {
     });
   };
 
-  if (isLoading || isLoading2)
+  useEffect(() => {
+    if (playerStats) {
+      const renderConds: boolean =
+        playerStats &&
+        playerStats.length === 2 &&
+        playerStats[0] !== null &&
+        playerStats[1] !== null;
+      console.log(renderConds);
+    }
+  }, [playerStats]);
+
+  if (isLoading)
     return (
       <div className="flex justify-center items-center">
         <span className="loading loading-bars loading-lg"></span>
       </div>
     );
 
-  if (error || error2) return <div>failed to load</div>;
+  if (error) return <div>failed to load</div>;
 
   function handleOnSubmit(event: FormEvent<HTMLFormElement>): void {
     event.preventDefault();
+    setSubmitStatus(true);
   }
 
   function handleCriteriaSubmit(event: FormEvent<HTMLFormElement>): void {
@@ -148,15 +174,15 @@ function H2HPlayerPage() {
             </form>
           </div>
           {playerStats &&
-          playerStats.length != 0 &&
-          playerStats[0] &&
-          playerStats[1] ? (
+          playerStats.length === 2 &&
+          playerStats[0] !== null &&
+          playerStats[1] !== null ? (
             <div>
               <div className="flex flex-row mt-20 mx-10">
                 <PlayerImage
                   name={player1!.player_name}
                   src={`https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/${
-                    player1!.player_id
+                    playerStats[0]!.player_id
                   }.png`}
                   fallbackSrc={`https://cdn.nba.com/headshots/nba/latest/1040x760/fallback.png`}
                   width={200}
@@ -166,7 +192,7 @@ function H2HPlayerPage() {
                 <PlayerImage
                   name={player2!.player_name}
                   src={`https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/${
-                    player2!.player_id
+                    playerStats[1]!.player_id
                   }.png`}
                   fallbackSrc={`https://cdn.nba.com/headshots/nba/latest/1040x760/fallback.png`}
                   width={200}
@@ -182,9 +208,9 @@ function H2HPlayerPage() {
                   <thead className="border">
                     <tr className="border">
                       <th></th>
-                      <th>{player1?.player_name}</th>
+                      <th>{playerStats[0]?.player_name}</th>
                       <th className=""></th>
-                      <th>{player2?.player_name}</th>
+                      <th>{playerStats[1]?.player_name}</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -242,186 +268,197 @@ function H2HPlayerPage() {
                 </table>
               </div>
             </div>
+          ) : (playerStats &&
+              playerStats.length == 2 &&
+              playerStats[0] === null) ||
+            playerStats[1] === null ? (
+            <div className="flex flex-col justify-center items-center mt-10">
+              <h1 className="text-2xl font-extrabold">
+                One of the players you selected has no stats for the given criteria. Please try again!
+              </h1>
+            </div>
           ) : (
-            <></>
+            <div className="flex flex-col justify-center items-center mt-10">
+              <h1 className="text-2xl font-extrabold">
+                Please select two players to compare!
+              </h1>
+            </div>
           )}
-        </div>
-
-        <div className="drawer-side">
-          <label
-            htmlFor="my-drawer"
-            aria-label="close sidebar"
-            className="drawer-overlay"
-          ></label>
-          <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
-            {/* Sidebar content here */}
-            <h1 className="text-4xl text-center font-extrabold">CRITERIA</h1>
-            <form onSubmit={handleCriteriaSubmit}>
-              <div className="form-control mt-20">
-                <label className="label cursor-pointer">
-                  <span className="label-text text-xl">Career: </span>
-                  <input
-                    type="radio"
-                    name="range-radio"
-                    className="radio checked:bg-red-500"
-                    value={"career"}
-                    checked={criteria.criteriaType === "career"}
-                    onChange={() =>
-                      setCriteria({ ...criteria, criteriaType: "career" })
-                    }
-                  />
-                </label>
-              </div>
-              <div className="form-control">
-                <label className="mt-10 label cursor-pointer">
-                  <span className="label-text text-xl">Season: </span>
-                  <input
-                    type="radio"
-                    name="range-radio"
-                    className="radio checked:bg-blue-500"
-                    value={"season"}
-                    onChange={() =>
-                      setCriteria({ ...criteria, criteriaType: "season" })
-                    }
-                    checked={criteria.criteriaType === "season"}
-                  />
-                </label>
-                <div className="">
-                  <label className="form-control w-2/5 max-w-xs">
-                    <div className="label">
-                      <span className="label-text w-full first-letter:text-center">
-                        Player 1:
-                      </span>
-                    </div>
-                    <select
-                      className="select select-bordered"
-                      onChange={(e) =>
-                        setCriteria({
-                          ...criteria,
-                          seasonP1: parseInt(e.target.value),
-                        })
+          <div className="drawer-side">
+            <label
+              htmlFor="my-drawer"
+              aria-label="close sidebar"
+              className="drawer-overlay"
+            ></label>
+            <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+              {/* Sidebar content here */}
+              <h1 className="text-4xl text-center font-extrabold">CRITERIA</h1>
+              <form onSubmit={handleCriteriaSubmit}>
+                <div className="form-control mt-20">
+                  <label className="label cursor-pointer">
+                    <span className="label-text text-xl">Career: </span>
+                    <input
+                      type="radio"
+                      name="range-radio"
+                      className="radio checked:bg-red-500"
+                      value={"career"}
+                      checked={criteria.criteriaType === "career"}
+                      onChange={() =>
+                        setCriteria({ ...criteria, criteriaType: "career" })
                       }
-                      disabled={criteria.criteriaType != "season"}
-                    >
-                      <option disabled value="">
-                        Pick one
-                      </option>
-                      {nba_to_years.map((season, i) => {
-                        return (
-                          <option key={i} value={season}>
-                            {season}
-                          </option>
-                        );
-                      })}
-                    </select>
-                  </label>
-                  <label className="form-control w-2/5 max-w-xs">
-                    <div className="label">
-                      <span className="label-text w-full first-letter:text-center">
-                        Player 2:
-                      </span>
-                    </div>
-                    <select
-                      className="select select-bordered"
-                      onChange={(e) =>
-                        setCriteria({
-                          ...criteria,
-                          seasonP2: parseInt(e.target.value),
-                        })
-                      }
-                      disabled={criteria.criteriaType != "season"}
-                    >
-                      <option disabled value="">
-                        Pick one
-                      </option>
-                      {nba_to_years.map((season, i) => {
-                        return (
-                          <option key={i} value={season}>
-                            {season}
-                          </option>
-                        );
-                      })}
-                    </select>
+                    />
                   </label>
                 </div>
-              </div>
-              <div className="form-control mt-5">
-                <label className="label cursor-pointer">
-                  <span className="label-text text-xl">Time Span: </span>
-                  <input
-                    type="radio"
-                    name="range-radio"
-                    className="radio checked:bg-accent"
-                    value={"range"}
-                    onChange={() =>
-                      setCriteria({ ...criteria, criteriaType: "range" })
-                    }
-                    checked={criteria.criteriaType === "range"}
-                  />
-                </label>
-                <div className="">
-                  <label className="form-control w-2/5 max-w-xs">
-                    <div className="label">
-                      <span className="label-text w-full first-letter:text-center">
-                        From:
-                      </span>
-                    </div>
-                    <select
-                      onChange={(e) =>
-                        setCriteria({
-                          ...criteria,
-                          from: parseInt(e.target.value),
-                        })
+                <div className="form-control">
+                  <label className="mt-10 label cursor-pointer">
+                    <span className="label-text text-xl">Season: </span>
+                    <input
+                      type="radio"
+                      name="range-radio"
+                      className="radio checked:bg-blue-500"
+                      value={"season"}
+                      onChange={() =>
+                        setCriteria({ ...criteria, criteriaType: "season" })
                       }
-                      className="select select-bordered"
-                      disabled={criteria.criteriaType != "range"}
-                    >
-                      <option disabled value="">
-                        Pick one
-                      </option>
-                      {nba_to_years.map((year, i) => {
-                        return (
-                          <option key={i} value={year}>
-                            {year}
-                          </option>
-                        );
-                      })}
-                    </select>
+                      checked={criteria.criteriaType === "season"}
+                    />
                   </label>
-                  <label className="form-control w-2/5 max-w-xs">
-                    <div className="label">
-                      <span className="label-text w-full first-letter:text-center">
-                        To:
-                      </span>
-                    </div>
-                    <select
-                      className="select select-bordered"
-                      onChange={(e) =>
-                        setCriteria({
-                          ...criteria,
-                          to: parseInt(e.target.value),
-                        })
-                      }
-                      disabled={criteria.criteriaType != "range"}
-                    >
-                      <option disabled value="">
-                        Pick one
-                      </option>
-                      {nba_to_years.map((year, i) => {
-                        return (
-                          <option key={i} value={year}>
-                            {year}
-                          </option>
-                        );
-                      })}
-                    </select>
-                  </label>
+                  <div className="">
+                    <label className="form-control w-2/5 max-w-xs">
+                      <div className="label">
+                        <span className="label-text w-full first-letter:text-center">
+                          Player 1:
+                        </span>
+                      </div>
+                      <select
+                        className="select select-bordered"
+                        onChange={(e) =>
+                          setCriteria({
+                            ...criteria,
+                            seasonP1: parseInt(e.target.value),
+                          })
+                        }
+                        disabled={criteria.criteriaType != "season"}
+                      >
+                        <option disabled value="">
+                          Pick one
+                        </option>
+                        {nba_to_years.map((season, i) => {
+                          return (
+                            <option key={i} value={season}>
+                              {season}
+                            </option>
+                          );
+                        })}
+                      </select>
+                    </label>
+                    <label className="form-control w-2/5 max-w-xs">
+                      <div className="label">
+                        <span className="label-text w-full first-letter:text-center">
+                          Player 2:
+                        </span>
+                      </div>
+                      <select
+                        className="select select-bordered"
+                        onChange={(e) =>
+                          setCriteria({
+                            ...criteria,
+                            seasonP2: parseInt(e.target.value),
+                          })
+                        }
+                        disabled={criteria.criteriaType != "season"}
+                      >
+                        <option disabled value="">
+                          Pick one
+                        </option>
+                        {nba_to_years.map((season, i) => {
+                          return (
+                            <option key={i} value={season}>
+                              {season}
+                            </option>
+                          );
+                        })}
+                      </select>
+                    </label>
+                  </div>
                 </div>
-              </div>
-              <button className="btn btn-primary w-full mt-10">Apply</button>
-            </form>
-          </ul>
-          P
+                <div className="form-control mt-5">
+                  <label className="label cursor-pointer">
+                    <span className="label-text text-xl">Time Span: </span>
+                    <input
+                      type="radio"
+                      name="range-radio"
+                      className="radio checked:bg-accent"
+                      value={"range"}
+                      onChange={() =>
+                        setCriteria({ ...criteria, criteriaType: "range" })
+                      }
+                      checked={criteria.criteriaType === "range"}
+                    />
+                  </label>
+                  <div className="">
+                    <label className="form-control w-2/5 max-w-xs">
+                      <div className="label">
+                        <span className="label-text w-full first-letter:text-center">
+                          From:
+                        </span>
+                      </div>
+                      <select
+                        onChange={(e) =>
+                          setCriteria({
+                            ...criteria,
+                            from: parseInt(e.target.value),
+                          })
+                        }
+                        className="select select-bordered"
+                        disabled={criteria.criteriaType != "range"}
+                      >
+                        <option disabled value="">
+                          Pick one
+                        </option>
+                        {nba_to_years.map((year, i) => {
+                          return (
+                            <option key={i} value={year}>
+                              {year}
+                            </option>
+                          );
+                        })}
+                      </select>
+                    </label>
+                    <label className="form-control w-2/5 max-w-xs">
+                      <div className="label">
+                        <span className="label-text w-full first-letter:text-center">
+                          To:
+                        </span>
+                      </div>
+                      <select
+                        className="select select-bordered"
+                        onChange={(e) =>
+                          setCriteria({
+                            ...criteria,
+                            to: parseInt(e.target.value),
+                          })
+                        }
+                        disabled={criteria.criteriaType != "range"}
+                      >
+                        <option disabled value="">
+                          Pick one
+                        </option>
+                        {nba_to_years.map((year, i) => {
+                          return (
+                            <option key={i} value={year}>
+                              {year}
+                            </option>
+                          );
+                        })}
+                      </select>
+                    </label>
+                  </div>
+                </div>
+                <button className="btn btn-primary w-full mt-10">Apply</button>
+              </form>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
