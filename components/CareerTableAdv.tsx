@@ -10,17 +10,21 @@ import {
   ColumnDef,
 } from "@tanstack/react-table";
 import React, { useMemo, useState } from "react";
-import { player_stats_per_game } from "@prisma/client";
+//import { userColumnDefs } from "./UserColumnDefs";
+import Pagination from "./Pagination";
+import CellLink from "./CellLink";
+import moment from "moment";
+import { player_stats_advanced, player_stats_per_game } from "@prisma/client";
 
 type propTypes = {
   careerData: Record<string, any>[];
   name: boolean;
 };
 
-export default function CareerTable(props: propTypes) {
-  const columnHelper = createColumnHelper<player_stats_per_game>();
+export default function CareerTableAdv(props: propTypes) {
+  const columnHelper = createColumnHelper<player_stats_advanced>();
   const userColumnDefs = useMemo<
-    ColumnDef<player_stats_per_game, any>[]
+    ColumnDef<player_stats_advanced, any>[]
   >(() => {
     return [
       columnHelper.accessor("pos", {
@@ -35,96 +39,89 @@ export default function CareerTable(props: propTypes) {
       columnHelper.accessor("tm", {
         header: "Team",
       }),
-      columnHelper.accessor("games", {
-        header: "G",
-      }),
-      columnHelper.accessor("gs", {
-        header: "GS",
+      columnHelper.accessor("g", {
+        header: "Games",
       }),
       columnHelper.accessor("mp", {
-        header: "MP",
+        header: "Minutes Played",
       }),
-      columnHelper.accessor("pts", {
-        header: "PPG",
+      columnHelper.accessor("per", {
+        header: "PER",
       }),
-      columnHelper.accessor("trb", {
-        header: "TRB",
+      columnHelper.accessor("ts_percent", {
+        header: "TS%",
       }),
-      columnHelper.accessor("ast", {
-        header: "AST",
+      columnHelper.accessor("par", {
+        header: "PAR",
       }),
-      columnHelper.accessor("stl", {
-        header: "STL",
+      columnHelper.accessor("ftr", {
+        header: "FTr",
       }),
-      columnHelper.accessor("blk", {
-        header: "BLK",
+      columnHelper.accessor("orb_percent", {
+        header: "ORB%",
       }),
-      columnHelper.accessor("orb", {
-        header: "ORB",
+      columnHelper.accessor("drb_percent", {
+        header: "DRB%",
       }),
-      columnHelper.accessor("drb", {
-        header: "DRB",
+      columnHelper.accessor("trb_percent", {
+        header: "TRB%",
       }),
-      columnHelper.accessor("fg", {
-        header: "FG",
+      columnHelper.accessor("ast_percent", {
+        header: "AST%",
       }),
-      columnHelper.accessor("fga", {
-        header: "FGA",
+      columnHelper.accessor("stl_percent", {
+        header: "STL%",
       }),
-      columnHelper.accessor("fg_percent", {
-        header: "FG%",
+      columnHelper.accessor("blk_percent", {
+        header: "BLK%",
       }),
-      columnHelper.accessor("threeP", {
-        header: "3P",
+      columnHelper.accessor("tov_percent", {
+        header: "TOV%",
       }),
-      columnHelper.accessor("threePA", {
-        header: "3PA",
+      columnHelper.accessor("usg_percent", {
+        header: "USG%",
       }),
-      columnHelper.accessor("three_percent", {
-        header: "3P%",
+      columnHelper.accessor("ows", {
+        header: "OWS",
       }),
-      columnHelper.accessor("twoP", {
-        header: "2P",
+      columnHelper.accessor("dws", {
+        header: "DWS",
       }),
-      columnHelper.accessor("two_percent", {
-        header: "2P%",
+      columnHelper.accessor("ws", {
+        header: "WS",
       }),
-      columnHelper.accessor("ft", {
-        header: "FT",
+      columnHelper.accessor("ws_48", {
+        header: "WS/48",
       }),
-      columnHelper.accessor("fta", {
-        header: "FTA",
+      columnHelper.accessor("obpm", {
+        header: "OBPM",
       }),
-      columnHelper.accessor("ft_percent", {
-        header: "FT%",
+      columnHelper.accessor("dbpm", {
+        header: "DBPM",
       }),
-
-      columnHelper.accessor("tov", {
-        header: "TOV",
+      columnHelper.accessor("bpm", {
+        header: "BPM",
       }),
-      columnHelper.accessor("pf", {
-        header: "PF",
+      columnHelper.accessor("vorp", {
+        header: "VORP",
       }),
     ];
   }, [columnHelper]);
   const { careerData, name } = props;
   const [sorting, setSorting] = useState<SortingState>([
     {
-      id: "year",
+      id: "year", // Must be equal to the accessorKey of the coulmn you want sorted by default
       desc: false,
     },
   ]);
   const [data, setData] = useState(() => [
-    ...(careerData as player_stats_per_game[]),
+    ...(careerData as player_stats_advanced[]),
   ]);
   const table = useReactTable({
     columns: userColumnDefs,
     data,
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
-    state: {
-      sorting,
-    },
     onSortingChange: setSorting,
   });
   const headers = table.getFlatHeaders();
@@ -132,7 +129,7 @@ export default function CareerTable(props: propTypes) {
   return (
     <div>
       <div className="max-h-[600px] noscroll-bar overflow-y-scroll overflow-x-scroll">
-        <table className="table table-zebra my-4 w-full">
+        <table className="table table-zebra my-4 w-full  ">
           <thead>
             <tr>
               {headers.map((header) => {

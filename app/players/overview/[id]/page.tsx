@@ -9,10 +9,13 @@ import {
   individual_awards,
   player,
   player_career_avg,
+  player_stats_advanced,
   player_stats_per_game,
   team_selection,
 } from "@prisma/client";
 import CareerAverages from "@/components/CareerAverages";
+import CareerTableAdv from "@/components/CareerTableAdv";
+import CareerTablePoss from "@/components/CareerTablePoss";
 
 async function playerPage({ params }: { params: { id: number } }) {
   const { id } = params;
@@ -29,12 +32,21 @@ async function playerPage({ params }: { params: { id: number } }) {
   FROM team_selection WHERE player_one=${intId} OR player_two=${intId} OR player_three=${intId} OR player_four=${intId} OR player_five=${intId} OR player_six=${intId}`;
   const careerDataBasic: player_stats_per_game[] =
     await prisma.$queryRaw`SELECT * FROM player_stats_per_game WHERE player_id = ${intId} AND playoffs_s='N'`;
+
   const careerDataBasicPlayoffs: player_stats_per_game[] =
     await prisma.$queryRaw`SELECT * FROM player_stats_per_game WHERE player_id = ${intId} AND playoffs_s='Y'`;
 
   const careerAveragesData: player_career_avg[] =
     await prisma.$queryRaw`SELECT * FROM player_career_avg WHERE player_id = ${intId} and playoffs_s='N'`;
 
+  const careerDataAdvancedRS: player_stats_advanced[] =
+    await prisma.$queryRaw`SELECT * FROM player_stats_advanced WHERE player_id = ${intId} AND playoffs_s='N'`;
+  const careerDataAdvancedPlayoffs: player_stats_advanced[] =
+    await prisma.$queryRaw`SELECT * FROM player_stats_advanced WHERE player_id = ${intId} AND playoffs_s='Y'`;
+  const careerDataPerPossRS: player_stats_advanced[] =
+    await prisma.$queryRaw`SELECT * FROM player_stats_per_poss WHERE player_id = ${intId} AND playoffs_s='N'`;
+  const careerDataPerPossPlayoffs: player_stats_advanced[] =
+    await prisma.$queryRaw`SELECT * FROM player_stats_per_poss WHERE player_id = ${intId} AND playoffs_s='Y'`;
   function countTeamAwards(awards: team_selection[]) {
     const all_NBA_count = awards.filter(
       (award) => award.type === "All League"
@@ -44,24 +56,6 @@ async function playerPage({ params }: { params: { id: number } }) {
     ).length;
     return { all_NBA_count, all_Def_count };
   }
-
-  /*  const careerDataAdvanced = await prisma.player_stats_advanced.findMany({
-    where: {
-      player_id: intId,
-    },
-  });
-
-  const careerDataTotals = await prisma.player_stats_totals.findMany({
-    where: {
-      player_id: intId,
-    },
-  });
-
-  const careerDataPer100 = await prisma.player_stats_per_poss.findMany({
-    where: {
-      player_id: intId,
-    },
-  }); */
 
   if (!player) {
     return <div>Player not found</div>;
@@ -102,6 +96,28 @@ async function playerPage({ params }: { params: { id: number } }) {
         <div className="mx-6 my-20">
           <h1 className="text-3xl">Basic Stats (Playoffs)</h1>
           <CareerTable careerData={careerDataBasicPlayoffs} name={false} />
+        </div>
+        <div className="mx-6 my-20">
+          <h1 className="text-3xl">Advanced Stats (Regular Season)</h1>
+          <CareerTableAdv careerData={careerDataAdvancedRS} name={false} />
+        </div>
+        <div className="mx-6 my-20">
+          <h1 className="text-3xl">Advanced Stats (Playoffs)</h1>
+          <CareerTableAdv
+            careerData={careerDataAdvancedPlayoffs}
+            name={false}
+          />
+        </div>
+        <div className="mx-6 my-20">
+          <h1 className="text-3xl">Per 100 Possessions (Playoffs)</h1>
+          <CareerTablePoss careerData={careerDataPerPossRS} name={false} />
+        </div>
+        <div className="mx-6 my-20">
+          <h1 className="text-3xl">Per 100 Possessions (Playoffs)</h1>
+          <CareerTablePoss
+            careerData={careerDataPerPossPlayoffs}
+            name={false}
+          />
         </div>
       </div>
     </div>

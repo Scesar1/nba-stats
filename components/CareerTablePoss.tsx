@@ -10,7 +10,11 @@ import {
   ColumnDef,
 } from "@tanstack/react-table";
 import React, { useMemo, useState } from "react";
-import { player_stats_per_game } from "@prisma/client";
+//import { userColumnDefs } from "./UserColumnDefs";
+import Pagination from "./Pagination";
+import CellLink from "./CellLink";
+import moment from "moment";
+import { player_stats_per_game, player_stats_per_poss } from "@prisma/client";
 
 type propTypes = {
   careerData: Record<string, any>[];
@@ -18,9 +22,9 @@ type propTypes = {
 };
 
 export default function CareerTable(props: propTypes) {
-  const columnHelper = createColumnHelper<player_stats_per_game>();
+  const columnHelper = createColumnHelper<player_stats_per_poss>();
   const userColumnDefs = useMemo<
-    ColumnDef<player_stats_per_game, any>[]
+    ColumnDef<player_stats_per_poss, any>[]
   >(() => {
     return [
       columnHelper.accessor("pos", {
@@ -45,7 +49,7 @@ export default function CareerTable(props: propTypes) {
         header: "MP",
       }),
       columnHelper.accessor("pts", {
-        header: "PPG",
+        header: "PTS",
       }),
       columnHelper.accessor("trb", {
         header: "TRB",
@@ -105,6 +109,12 @@ export default function CareerTable(props: propTypes) {
       columnHelper.accessor("pf", {
         header: "PF",
       }),
+      columnHelper.accessor("ortg", {
+        header: "ORtg",
+      }),
+      columnHelper.accessor("drtg", {
+        header: "DRtg",
+      }),
     ];
   }, [columnHelper]);
   const { careerData, name } = props;
@@ -115,7 +125,7 @@ export default function CareerTable(props: propTypes) {
     },
   ]);
   const [data, setData] = useState(() => [
-    ...(careerData as player_stats_per_game[]),
+    ...(careerData as player_stats_per_poss[]),
   ]);
   const table = useReactTable({
     columns: userColumnDefs,
@@ -132,7 +142,7 @@ export default function CareerTable(props: propTypes) {
   return (
     <div>
       <div className="max-h-[600px] noscroll-bar overflow-y-scroll overflow-x-scroll">
-        <table className="table table-zebra my-4 w-full">
+        <table className="table table-zebra my-4 w-full  ">
           <thead>
             <tr>
               {headers.map((header) => {
