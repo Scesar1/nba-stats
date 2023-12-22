@@ -206,52 +206,52 @@ function H2HPlayerPage() {
                     {/* row 2 */}
                     <tr className="hover">
                       <th>PPG</th>
-                      <td>{playerStats[0].pts}</td>
+                      <td>{playerStats[0].pts?.toString()}</td>
                       <td></td>
-                      <td>{playerStats[1].pts}</td>
+                      <td>{playerStats[1].pts?.toString()}</td>
                     </tr>
                     {/* row 3 */}
                     <tr className="hover">
                       <th>TRB/G</th>
-                      <td>{playerStats[0].trb}</td>
+                      <td>{playerStats[0].trb?.toString()}</td>
                       <td></td>
-                      <td>{playerStats[1].trb}</td>
+                      <td>{playerStats[1].trb?.toString()}</td>
                     </tr>
                     <tr className="hover">
                       <th>AST/G</th>
-                      <td>{playerStats[0].ast}</td>
+                      <td>{playerStats[0].ast?.toString()}</td>
                       <td></td>
-                      <td>{playerStats[1].ast}</td>
+                      <td>{playerStats[1].ast?.toString()}</td>
                     </tr>
                     <tr className="hover">
                       <th>STL/G</th>
-                      <td>{playerStats[0].stl}</td>
+                      <td>{playerStats[0].stl?.toString()}</td>
                       <td></td>
-                      <td>{playerStats[1].stl}</td>
+                      <td>{playerStats[1].stl?.toString()}</td>
                     </tr>
                     <tr className="hover">
                       <th>BLK/G</th>
-                      <td>{playerStats[0].blk}</td>
+                      <td>{playerStats[0].blk?.toString()}</td>
                       <td></td>
-                      <td>{playerStats[1].blk}</td>
+                      <td>{playerStats[1].blk?.toString()}</td>
                     </tr>
                     <tr className="hover">
                       <th>FG%</th>
-                      <td>{playerStats[0].fg_percent}</td>
+                      <td>{playerStats[0].fg_percent?.toString()}</td>
                       <td></td>
-                      <td>{playerStats[1].fg_percent}</td>
+                      <td>{playerStats[1].fg_percent?.toString()}</td>
                     </tr>
                     <tr className="hover">
                       <th>3P%</th>
-                      <td>{playerStats[0].three_percent}</td>
+                      <td>{playerStats[0].three_percent?.toString()}</td>
                       <td></td>
-                      <td>{playerStats[1].three_percent}</td>
+                      <td>{playerStats[1].three_percent?.toString()}</td>
                     </tr>
                     <tr className="hover">
                       <th>FT%</th>
-                      <td>{playerStats[0].ft_percent}</td>
+                      <td>{playerStats[0].ft_percent?.toString()}</td>
                       <td></td>
-                      <td>{playerStats[1].ft_percent}</td>
+                      <td>{playerStats[1].ft_percent?.toString()}</td>
                     </tr>
                   </tbody>
                 </table>
