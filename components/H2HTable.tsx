@@ -21,8 +21,7 @@ function H2HTable({ playerStats }: PropTypes) {
     } else if (stat1 < stat2) {
       return "bg-success text-success-content";
     } else {
-    return "<bg-warning styleName="
-  "></bg-warning> text-warning-content";
+      return "bg-warning text-warning-content";
     }
   }
   return (
@@ -108,23 +107,71 @@ function H2HTable({ playerStats }: PropTypes) {
             </td>
           </tr>
           <tr className="hover">
-            <th>FG%</th>
+            <th>FGM</th>
+            <td
+              className={player1Compare(playerStats[0].fg, playerStats[1].fg)}
+            >
+              {playerStats[0].fg?.toString()}
+            </td>
+            <td></td>
+            <td
+              className={player2Compare(playerStats[0].fg, playerStats[1].fg)}
+            >
+              {playerStats[1].fg?.toString()}
+            </td>
+          </tr>
+          <tr className="hover">
+            <th>FGA</th>
+            <td
+              className={player1Compare(playerStats[0].fga, playerStats[1].fga)}
+            >
+              {playerStats[0].fga?.toString()}
+            </td>
+            <td></td>
+            <td
+              className={player2Compare(playerStats[0].fga, playerStats[1].fga)}
+            >
+              {playerStats[1].fga?.toString()}
+            </td>
+          </tr>
+          <tr className="hover">
+            <th>FG3M</th>
             <td
               className={player1Compare(
-                playerStats[0].fg_percent,
-                playerStats[1].fg_percent
+                playerStats[0].threeP,
+                playerStats[1].threeP
               )}
             >
-              {playerStats[0].fg_percent?.toString()}
+              {playerStats[0].threeP?.toString()}
             </td>
             <td></td>
             <td
               className={player2Compare(
-                playerStats[0].fg_percent,
-                playerStats[1].fg_percent
+                playerStats[0].threeP,
+                playerStats[1].threeP
               )}
             >
-              {playerStats[1].fg_percent?.toString()}
+              {playerStats[1].threeP?.toString()}
+            </td>
+          </tr>
+          <tr className="hover">
+            <th>FG3A</th>
+            <td
+              className={player1Compare(
+                playerStats[0].threePA,
+                playerStats[1].threePA
+              )}
+            >
+              {playerStats[0].threePA?.toString()}
+            </td>
+            <td></td>
+            <td
+              className={player2Compare(
+                playerStats[0].threePA,
+                playerStats[1].threePA
+              )}
+            >
+              {playerStats[1].threePA?.toString()}
             </td>
           </tr>
           <tr className="hover">
@@ -159,7 +206,7 @@ function H2HTable({ playerStats }: PropTypes) {
             </td>
             <td></td>
             <td
-              className={player1Compare(
+              className={player2Compare(
                 playerStats[0].ft_percent,
                 playerStats[1].ft_percent
               )}

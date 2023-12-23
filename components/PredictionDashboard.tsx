@@ -23,20 +23,20 @@ function PredictionDashboard(props: propTypes) {
               className="col-span-1 radial-progress bg-neutral text-info border-4 border-neutral"
               style={{ "--value": `${playoffs}` } as React.CSSProperties}
             >
-              {playoffs}
+              {playoffs.toString()}
             </div>
             <div
               className="col-span-1 radial-progress bg-neutral text-warning border-4 border-neutral"
               style={{ "--value": `${finals}` } as React.CSSProperties}
             >
-              {finals}
+              {finals.toString()}
             </div>
             <div className="col-span-2 md:col-start-1 md:col-end-3 text-center ">
               <div
                 className="radial-progress bg-neutral text-success border-4 border-neutral"
                 style={{ "--value": `${championship}` } as React.CSSProperties}
               >
-                {championship}
+                {championship.toString()}
               </div>
             </div>
           </div>
