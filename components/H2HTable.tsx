@@ -135,6 +135,26 @@ function H2HTable({ playerStats }: PropTypes) {
             </td>
           </tr>
           <tr className="hover">
+            <th>FG%</th>
+            <td
+              className={player1Compare(
+                playerStats[0].fg_percent,
+                playerStats[1].fg_percent
+              )}
+            >
+              {playerStats[0].fg_percent?.toString()}
+            </td>
+            <td></td>
+            <td
+              className={player2Compare(
+                playerStats[0].fg_percent,
+                playerStats[1].fg_percent
+              )}
+            >
+              {playerStats[1].fg_percent?.toString()}
+            </td>
+          </tr>
+          <tr className="hover">
             <th>FG3M</th>
             <td
               className={player1Compare(

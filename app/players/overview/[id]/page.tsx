@@ -32,21 +32,33 @@ async function playerPage({ params }: { params: { id: number } }) {
   FROM team_selection WHERE player_one=${intId} OR player_two=${intId} OR player_three=${intId} OR player_four=${intId} OR player_five=${intId} OR player_six=${intId}`;
   const careerDataBasic: player_stats_per_game[] =
     await prisma.$queryRaw`SELECT * FROM player_stats_per_game WHERE player_id = ${intId} AND playoffs_s='N'`;
-
+  const careerBasic = JSON.parse(JSON.stringify(careerDataBasic));
   const careerDataBasicPlayoffs: player_stats_per_game[] =
     await prisma.$queryRaw`SELECT * FROM player_stats_per_game WHERE player_id = ${intId} AND playoffs_s='Y'`;
-
+  const careerBasicPlayoffs = JSON.parse(
+    JSON.stringify(careerDataBasicPlayoffs)
+  );
   const careerAveragesData: player_career_avg[] =
     await prisma.$queryRaw`SELECT * FROM player_career_avg WHERE player_id = ${intId} and playoffs_s='N'`;
-
+  const careerAverages = JSON.parse(JSON.stringify(careerAveragesData));
   const careerDataAdvancedRS: player_stats_advanced[] =
     await prisma.$queryRaw`SELECT * FROM player_stats_advanced WHERE player_id = ${intId} AND playoffs_s='N'`;
+  const careerAdvancedRS = JSON.parse(JSON.stringify(careerDataAdvancedRS));
+
   const careerDataAdvancedPlayoffs: player_stats_advanced[] =
     await prisma.$queryRaw`SELECT * FROM player_stats_advanced WHERE player_id = ${intId} AND playoffs_s='Y'`;
+  const careerAdvancedPlayoffs = JSON.parse(
+    JSON.stringify(careerDataAdvancedPlayoffs)
+  );
   const careerDataPerPossRS: player_stats_advanced[] =
     await prisma.$queryRaw`SELECT * FROM player_stats_per_poss WHERE player_id = ${intId} AND playoffs_s='N'`;
+  const careerPerPossRS = JSON.parse(JSON.stringify(careerDataPerPossRS));
   const careerDataPerPossPlayoffs: player_stats_advanced[] =
     await prisma.$queryRaw`SELECT * FROM player_stats_per_poss WHERE player_id = ${intId} AND playoffs_s='Y'`;
+  const careerPerPossPlayoffs = JSON.parse(
+    JSON.stringify(careerDataPerPossPlayoffs)
+  );
+
   function countTeamAwards(awards: team_selection[]) {
     const all_NBA_count = awards.filter(
       (award) => award.type === "All League"
@@ -63,7 +75,7 @@ async function playerPage({ params }: { params: { id: number } }) {
 
   return (
     <div>
-      <div className="max-h-[850px] container no-scrollbar overflow-y-scroll overflow-x-hidden">
+      <div className="overflow-x-hidden">
         <div className="flex flex-row">
           <div className="card my-20 ml-4 rounded-lg bg-[#fcf1ce] p-1 w-fit h-fit shadow-xl">
             <div className="card-body bg-base-100 flex flex-col items-center p-4">
@@ -87,37 +99,31 @@ async function playerPage({ params }: { params: { id: number } }) {
         <div className="mx-6 mt-[-3rem] mb-14">
           <h1 className="text-3xl">Career Averages (Regular Season)</h1>
 
-          <CareerAverages careerAverages={careerAveragesData} />
+          <CareerAverages careerAverages={careerAverages} />
         </div>
         <div className="mx-6">
           <h1 className="text-3xl">Basic Stats (Regular Season)</h1>
-          <CareerTable careerData={careerDataBasic} name={false} />
+          <CareerTable careerData={careerBasic} name={false} />
         </div>
         <div className="mx-6 my-20">
           <h1 className="text-3xl">Basic Stats (Playoffs)</h1>
-          <CareerTable careerData={careerDataBasicPlayoffs} name={false} />
+          <CareerTable careerData={careerBasicPlayoffs} name={false} />
         </div>
         <div className="mx-6 my-20">
           <h1 className="text-3xl">Advanced Stats (Regular Season)</h1>
-          <CareerTableAdv careerData={careerDataAdvancedRS} name={false} />
+          <CareerTableAdv careerData={careerAdvancedRS} name={true} />
         </div>
         <div className="mx-6 my-20">
           <h1 className="text-3xl">Advanced Stats (Playoffs)</h1>
-          <CareerTableAdv
-            careerData={careerDataAdvancedPlayoffs}
-            name={false}
-          />
+          <CareerTableAdv careerData={careerAdvancedPlayoffs} name={true} />
+        </div>
+        <div className="mx-6 my-20">
+          <h1 className="text-3xl">Per 100 Possessions (Regular Season)</h1>
+          <CareerTablePoss careerData={careerPerPossRS} name={true} />
         </div>
         <div className="mx-6 my-20">
           <h1 className="text-3xl">Per 100 Possessions (Playoffs)</h1>
-          <CareerTablePoss careerData={careerDataPerPossRS} name={false} />
-        </div>
-        <div className="mx-6 my-20">
-          <h1 className="text-3xl">Per 100 Possessions (Playoffs)</h1>
-          <CareerTablePoss
-            careerData={careerDataPerPossPlayoffs}
-            name={false}
-          />
+          <CareerTablePoss careerData={careerPerPossPlayoffs} name={true} />
         </div>
       </div>
     </div>

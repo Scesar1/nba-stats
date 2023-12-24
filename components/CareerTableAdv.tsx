@@ -122,7 +122,7 @@ export default function CareerTableAdv(props: propTypes) {
     data,
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
-    getPaginationRowModel: getPaginationRowModel(),
+    //getPaginationRowModel: getPaginationRowModel(),
     state: {
       sorting,
     },
@@ -132,7 +132,7 @@ export default function CareerTableAdv(props: propTypes) {
   const rows = table.getRowModel().rows;
   return (
     <div>
-      <div className="max-h-[600px] noscroll-bar overflow-y-scroll overflow-x-scroll">
+      <div className="max-h-[600px] noscroll-bar overflow-y-auto overflow-x-auto">
         <table className="table table-zebra my-4 w-full  ">
           <thead>
             <tr>
